@@ -1,34 +1,34 @@
-# Phase 1 · Foundations
+# Phase 1 - Foundations
 
-> The base everything else sits on. No shortcuts here.
-
-**Estimated duration:** 4–8 weeks  
-**Commitment:** 10–15 hours per week
+**Estimated duration:** 4-6 weeks  
+**Commitment:** 10-15 hours per week
 
 ---
 
-## What you'll be able to do after this phase
+## Reality check before you start
 
-- Write async, typed, object-oriented Python for real AI projects
-- Understand the math behind ML algorithms (not memorize - understand)
-- Train, evaluate and select classical machine learning models
-- Complete the phase project: a deployed sentiment classifier
+Based on analysis of thousands of AI Engineer job postings, here is what Phase 1 actually means for your career:
+
+**Python skills:** appear in 82% of all AI Engineer postings. This is the most important thing you can do in Phase 1.
+
+**Math skills:** appear explicitly in fewer than 20% of postings, and mostly for ML Engineer roles (training models from scratch). If your goal is AI Engineer or LLM Engineer, spend less time here and come back later if needed.
+
+**ML fundamentals:** useful for context and understanding, not a hard requirement for most production AI Engineer roles.
 
 ---
 
 ## Modules
 
-### [01 · Python for AI](./01-python-for-ai/)
+### [01 - Python for AI](./01-python-for-ai/) — do this first, take your time
 
-The Python used in real AI projects is not beginner Python. You need async/await for API calls, type hints to keep code readable as projects grow, and NumPy + Pandas to work with data.
+The Python that production AI projects use. Not beginner Python - async, typed, and tool-friendly.
 
 **Topics:**
-- `async/await` and asynchronous programming
-- OOP: classes, inheritance, protocols
-- Type hints and mypy
+- `async/await` - you will use this for every API call
+- OOP and type hints - code that doesn't fall apart at 1000 lines
 - NumPy: arrays, broadcasting, vectorized operations
-- Pandas: DataFrames, groupby, merge, data cleaning
-- Matplotlib and Seaborn: exploratory visualization
+- Pandas: DataFrames, groupby, merge, cleaning
+- Matplotlib/Seaborn: quick visualizations
 
 **Resources:**
 | Resource | Time |
@@ -39,41 +39,40 @@ The Python used in real AI projects is not beginner Python. You need async/await
 
 ---
 
-### [02 · Math & Statistics](./02-math-and-stats/)
+### [02 - Math and Statistics](./02-math-and-stats/) — useful, not blocking
 
-You don't need to be a mathematician, but you do need to understand what the code is doing underneath. Without this, debugging a broken model means guessing.
+Good to have, not a hard requirement for most AI Engineer roles. If you're in a hurry, do 1 week of linear algebra and move on. Come back for the rest later.
+
+If you want ML Engineer roles (training your own models), invest the full time here.
 
 **Topics:**
-- Linear algebra: vectors, matrices, matrix multiplication, eigenvalues
-- Calculus: derivatives, chain rule (that's basically backprop), gradients
-- Probability: distributions, Bayes theorem, expected value
-- Statistics: mean, variance, correlation, basic hypothesis testing
+- Linear algebra: vectors, matrices, dot product, eigenvalues
+- Calculus: derivatives and chain rule (this is what backprop is)
+- Probability and statistics: distributions, Bayes, mean and variance
 
 **Resources:**
 | Resource | Time |
 |---|---|
 | [3Blue1Brown - Essence of Linear Algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) | 1 week |
 | [3Blue1Brown - Calculus](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr) | 1 week |
-| [StatQuest - Probability & Statistics](https://www.youtube.com/@statquest) | 2 weeks |
+| [StatQuest - Probability and Statistics](https://www.youtube.com/@statquest) | 1 week |
 
 ---
 
-### [03 · ML Fundamentals](./03-ml-fundamentals/)
+### [03 - ML Fundamentals](./03-ml-fundamentals/) — for context
 
-Classical machine learning: regression, classification, clustering. Scikit-learn is your main tool here. Beyond training models, you'll learn to evaluate them properly - which is more than half the real work.
+Classical machine learning. Scikit-learn is your tool here. The goal is not to become a data scientist - it's to understand what models do so you can use them intelligently.
 
 **Topics:**
 - Linear and logistic regression
-- Decision trees, Random Forest, XGBoost
-- Clustering: K-means, DBSCAN
-- Evaluation metrics: accuracy, precision, recall, F1, AUC-ROC
-- Overfitting, regularization, cross-validation
-- Feature engineering and feature selection
+- Random Forest and XGBoost
+- Evaluation: accuracy, precision, recall, F1, AUC
+- Overfitting, cross-validation, feature engineering
 
 **Resources:**
 | Resource | Time |
 |---|---|
-| [Andrew Ng - ML Specialization](https://www.coursera.org/specializations/machine-learning-introduction) | 4 weeks |
+| [Andrew Ng - ML Specialization](https://www.coursera.org/specializations/machine-learning-introduction) | 3 weeks |
 | [Scikit-learn - Official tutorial](https://scikit-learn.org/stable/tutorial/index.html) | 1 week |
 | [Kaggle - Feature Engineering](https://www.kaggle.com/learn/feature-engineering) | 3 days |
 
@@ -83,15 +82,10 @@ Classical machine learning: regression, classification, clustering. Scikit-learn
 
 **Deployed sentiment classifier**
 
-Build a model that classifies text as positive, negative or neutral, and expose it as a simple web app.
+Text classifier with a Streamlit frontend. The point is to complete the full cycle: data, model, evaluation, deployment. Not to get a perfect accuracy.
 
-**Stack:** Python · Scikit-learn · Streamlit  
-**Dataset:** [IMDb reviews](https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews) or [Twitter Sentiment](https://www.kaggle.com/datasets/kazanova/sentiment140)
-
-**What you'll demonstrate:**
-- Full pipeline: raw data → features → model → evaluation
-- Functional web interface with Streamlit
-- Clean, typed code
+**Stack:** Python, Scikit-learn, Streamlit  
+**Dataset:** [IMDb 50K reviews](https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews)
 
 Project folder: [`03-ml-fundamentals/project/`](./03-ml-fundamentals/project/)
 
@@ -99,12 +93,11 @@ Project folder: [`03-ml-fundamentals/project/`](./03-ml-fundamentals/project/)
 
 ## Phase checklist
 
-- [ ] Wrote at least one Python script using `async/await`
-- [ ] Implemented a class with type hints
-- [ ] Manipulated a dataset with Pandas (groupby, merge, cleaning)
-- [ ] Can explain what a gradient is without looking it up
-- [ ] Trained at least 3 different ML algorithms
-- [ ] Evaluated a model using more than one metric
+- [ ] Can write async Python and explain why it matters for API calls
+- [ ] Built a typed class with type hints
+- [ ] Cleaned a real dataset with Pandas
+- [ ] Can explain gradient descent without looking it up
+- [ ] Trained 3 different classifiers and compared them
 - [ ] Sentiment classifier runs on Streamlit
 
-When you're done, move on to [Phase 2 · AI Core](../phase-2-ai-core/).
+Next: [Phase 2 - AI Core](../phase-2-ai-core/)

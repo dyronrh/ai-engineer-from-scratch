@@ -1,33 +1,34 @@
-# Phase 3 · Advanced AI
+# Phase 3 - Advanced AI
 
-> This is where real engineering begins.
-
-**Estimated duration:** 6–10 weeks  
-**Prerequisite:** Phase 2 complete - especially LLM Engineering
+**Estimated duration:** 6-10 weeks  
+**Prerequisite:** Phase 2 done, especially LLM Engineering
 
 ---
 
-## What you'll be able to do after this phase
+## Market context for this phase
 
-- Design and build RAG systems that actually work (not just tutorials)
-- Create stateful AI agents with memory and tools
-- Understand when and how to fine-tune a model
-- Complete the phase project: a multi-document research agent
+This phase covers the two skills with the highest demand growth in the entire AI engineer job market:
+
+**RAG systems** are the dominant production use case in 2024-2025. Nearly every company that builds on LLMs needs RAG. It's not a nice-to-have anymore.
+
+**AI Agents** saw 980% job posting growth from 2023 to 2024. LangGraph and LangChain appear in 39.9% of all agentic AI engineering roles. Agentic AI engineers earn 15-20% more than standard AI engineers on average.
+
+Fine-tuning is useful to understand, but most companies reach for RAG and prompt engineering before fine-tuning. Know how it works, but don't spend 6 weeks on it before you can build a working agent.
 
 ---
 
 ## Modules
 
-### [01 · RAG Systems](./01-rag-systems/)
+### [01 - RAG Systems](./01-rag-systems/) — highest priority
 
-Retrieval-Augmented Generation: making LLMs work with your own data.
+Retrieval-Augmented Generation: making LLMs work with your own data. This is what most companies actually want when they say they're building an AI product.
 
 **Topics:**
-- Embeddings: what they are, how to pick the right model
-- Vector databases: Chroma, Pinecone, Weaviate, pgvector
-- Basic RAG pipeline: chunk → embed → store → retrieve → generate
+- Embeddings: what they are, how to choose the right model
+- Vector databases: Chroma (free, local), Pinecone (managed), pgvector (postgres)
+- Basic RAG pipeline: chunk, embed, store, retrieve, generate
 - Advanced RAG: HyDE, reranking, hybrid search
-- RAG evaluation: context relevance, faithfulness, answer relevance
+- Evaluating RAG: context relevance, faithfulness, answer quality
 
 **Resources:**
 | Resource | Time |
@@ -38,17 +39,17 @@ Retrieval-Augmented Generation: making LLMs work with your own data.
 
 ---
 
-### [02 · AI Agents](./02-ai-agents/)
+### [02 - AI Agents](./02-ai-agents/) — highest priority
 
-Agents that plan, use tools, and adapt. Not chatbots with if/else.
+Agents that plan, use tools, loop until a goal is met, and coordinate with other agents. Not chatbots. Real systems that do things.
 
 **Topics:**
-- ReAct pattern: Reason → Act → Observe
-- LangGraph: state graphs for complex agents
-- Tools: web search, code execution, external APIs
+- ReAct pattern: Reason, Act, Observe
+- LangGraph: stateful agent workflows with branching and loops
+- Tools: web search, code execution, database queries, external APIs
 - Memory: short-term (context window), long-term (vector store)
-- Multi-agent: coordination, communication, specialization
-- MCP - Model Context Protocol: Anthropic's standard for connecting tools
+- Multi-agent systems: coordinator and specialist agents
+- MCP - Model Context Protocol: Anthropic's open standard for tool connectivity
 
 **Resources:**
 | Resource | Time |
@@ -60,16 +61,16 @@ Agents that plan, use tools, and adapt. Not chatbots with if/else.
 
 ---
 
-### [03 · Fine-tuning](./03-fine-tuning/)
+### [03 - Fine-tuning](./03-fine-tuning/) — medium priority
 
-When fine-tuning makes sense (less often than you think) and how to do it right.
+When to fine-tune vs when to use RAG vs when to just fix your prompt. This skill differentiates strong candidates, but most production systems never actually need it. Learn it after RAG and Agents.
 
 **Topics:**
-- Fine-tuning vs. prompt engineering vs. RAG - when to use each
-- LoRA and QLoRA: efficient fine-tuning on modest hardware
-- Dataset curation: quality over quantity
-- Evaluating fine-tuned models
-- Tools: HuggingFace PEFT, Axolotl, Unsloth
+- When fine-tuning is the right call (and when it isn't)
+- LoRA and QLoRA: fine-tuning on consumer hardware
+- Building a training dataset: quality beats quantity
+- Evaluating fine-tuned models properly
+- HuggingFace PEFT, Axolotl, Unsloth
 
 **Resources:**
 | Resource | Time |
@@ -84,10 +85,10 @@ When fine-tuning makes sense (less often than you think) and how to do it right.
 
 **Research agent with RAG**
 
-An agent that takes a question, searches for relevant information across a document collection using RAG, and generates a structured report with sources.
+An agent that takes a question, searches a document collection with RAG, and generates a structured report with cited sources. This is the kind of system that gets you interviews.
 
-**Stack:** Python · LangGraph · ChromaDB · OpenAI or Claude  
-**Demonstrates:** Stateful agents · RAG pipeline · Planning · Source citation
+**Stack:** Python, LangGraph, ChromaDB, OpenAI or Claude  
+**Demonstrates:** Stateful agents, RAG pipeline, planning, source attribution
 
 Project folder: [`02-ai-agents/project/`](./02-ai-agents/project/)
 
@@ -95,10 +96,10 @@ Project folder: [`02-ai-agents/project/`](./02-ai-agents/project/)
 
 ## Phase checklist
 
-- [ ] Built a RAG pipeline that evaluates faithfulness and relevance
-- [ ] Implemented an agent with tools using LangGraph
-- [ ] Understand when to use multi-agent and when not to
-- [ ] Fine-tuned some model (even a small one)
-- [ ] The research agent generates reports with cited sources
+- [ ] Built a RAG pipeline and measured faithfulness and relevance
+- [ ] Implemented an agent with at least 3 tools using LangGraph
+- [ ] Can explain the tradeoff between RAG, fine-tuning, and prompt engineering
+- [ ] Multi-agent setup where one agent delegates to others
+- [ ] Research agent produces reports with traceable sources
 
-Next: [Phase 4 · Production](../phase-4-production/)
+Next: [Phase 4 - Production](../phase-4-production/)

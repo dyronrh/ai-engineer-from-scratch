@@ -1,33 +1,32 @@
-# Phase 4 · Production
+# Phase 4 - Production
 
-> AI systems that don't break at 3am.
-
-**Estimated duration:** 4–6 weeks  
-**Prerequisite:** Phase 3 complete
+**Estimated duration:** 4-6 weeks  
+**Prerequisite:** Phase 3 done
 
 ---
 
-## What you'll be able to do after this phase
+## Market context for this phase
 
-- Track experiments and reproduce results reliably
-- Package and deploy AI services with Docker and Kubernetes
-- Set up monitoring for LLM applications in production
-- Implement guardrails and evaluation pipelines
-- Complete the phase project: production LLM API with full observability
+The skills in this phase are what separate candidates who can demo things from candidates who can ship them. Every company hiring AI engineers wants both — but production skills are the bottleneck.
+
+- Docker and Kubernetes appear in 15-17% of all AI Engineer job postings
+- FastAPI has 1,700+ active job listings that combine it with AI
+- 63% of companies report a shortage of engineers with MLOps experience
+- End-to-end production experience puts you in the top 10% of candidates
 
 ---
 
 ## Modules
 
-### [01 · MLOps](./01-mlops/)
+### [01 - MLOps](./01-mlops/)
 
-The infrastructure that keeps AI projects alive long-term.
+The infrastructure that makes AI projects maintainable. Without it, you can't reproduce results, you don't know what's in production, and deploying a new version is a manual nightmare.
 
 **Topics:**
-- Experiment tracking with MLflow: log metrics, parameters, artifacts
+- Experiment tracking with MLflow: log params, metrics, and model artifacts
 - Data versioning with DVC: track datasets like code
-- CI/CD for ML with GitHub Actions: automate training, testing, deployment
-- Model registry: version, stage and serve models
+- CI/CD for ML with GitHub Actions: automate testing and deployment
+- Model registry: version, stage, and serve models
 
 **Resources:**
 | Resource | Time |
@@ -38,16 +37,16 @@ The infrastructure that keeps AI projects alive long-term.
 
 ---
 
-### [02 · Deployment](./02-deployment/)
+### [02 - Deployment](./02-deployment/) — high priority
 
-Getting your model from notebook to a service that handles real traffic.
+FastAPI, Docker, and a cloud provider. This stack shows up in nearly every mid-size company and startup AI engineer posting. Without it you can build things, but you can't ship them.
 
 **Topics:**
-- FastAPI: build production-grade AI APIs
-- Docker: containerize your application
-- Docker Compose: local multi-service setup
-- Kubernetes: orchestration basics
-- Cloud deployment: AWS (SageMaker, ECS) or GCP (Cloud Run, Vertex AI)
+- FastAPI: build production-grade AI APIs with async support
+- Docker: containerize your app so it runs the same everywhere
+- Docker Compose: local multi-service setups (API + vector DB + monitoring)
+- Kubernetes basics: orchestration for production
+- Cloud: AWS (ECS/SageMaker) or GCP (Cloud Run/Vertex AI)
 
 **Resources:**
 | Resource | Time |
@@ -58,21 +57,21 @@ Getting your model from notebook to a service that handles real traffic.
 
 ---
 
-### [03 · Observability](./03-observability/)
+### [03 - Observability](./03-observability/)
 
-You can't fix what you can't see. LLM apps need different monitoring than traditional software.
+LLM apps need different monitoring than traditional software. You can't just check if the server is up — you need to know if the answers are any good.
 
 **Topics:**
 - LLM monitoring with Langfuse: traces, costs, latency, quality
-- Guardrails: input/output validation, toxicity filtering, PII detection
-- Evaluation pipelines: automated evals running on every deployment
-- OWASP LLM Top 10: prompt injection, insecure output handling, and more
+- Guardrails: input/output validation, prompt injection detection
+- Evaluation pipelines: automated evals on every deployment
+- OWASP LLM Top 10: the security risks specific to LLM applications
 
 **Resources:**
 | Resource | Time |
 |---|---|
 | [Langfuse Docs](https://langfuse.com/docs) | 3 days |
-| [RAGAS](https://docs.ragas.io/) · [DeepEval](https://docs.confident-ai.com/) | 1 week |
+| [RAGAS](https://docs.ragas.io/) and [DeepEval](https://docs.confident-ai.com/) | 1 week |
 | [OWASP LLM Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/) | 3 days |
 
 ---
@@ -81,10 +80,10 @@ You can't fix what you can't see. LLM apps need different monitoring than tradit
 
 **Production LLM API with monitoring**
 
-A complete LLM service deployed with Docker, with a FastAPI interface and Langfuse monitoring.
+FastAPI + Docker + Langfuse. A real service with traces, health checks, and a CI/CD pipeline. This is what companies mean when they ask for "production experience."
 
-**Stack:** FastAPI · Docker · Langfuse · GitHub Actions  
-**Demonstrates:** Production deployment · Monitoring · CI/CD · API design
+**Stack:** FastAPI, Docker, Langfuse, GitHub Actions  
+**Demonstrates:** API design, containerization, observability, automated deployment
 
 Project folder: [`02-deployment/project/`](./02-deployment/project/)
 
@@ -92,11 +91,11 @@ Project folder: [`02-deployment/project/`](./02-deployment/project/)
 
 ## Phase checklist
 
-- [ ] Tracked an experiment with MLflow (metrics, params, model artifact)
+- [ ] Logged a full experiment with MLflow (params, metrics, artifact)
 - [ ] Versioned a dataset with DVC
-- [ ] Containerized an AI app with Docker
-- [ ] Set up a GitHub Actions workflow for ML
-- [ ] Deployed a FastAPI service to the cloud
+- [ ] Built and containerized a FastAPI service with Docker
+- [ ] GitHub Actions runs tests and deploys on push
+- [ ] Deployed something to the cloud that someone else can hit
 - [ ] Set up Langfuse traces for an LLM app
 - [ ] Implemented at least one guardrail
 
