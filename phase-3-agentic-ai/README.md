@@ -165,6 +165,13 @@ Lightweight agent framework. Good for building agents fast with minimal boilerpl
 
 - [Agno Docs](https://docs.agno.com/)
 
+### ADK - Agent Development Kit (Google)
+Google's open-source framework for building multi-agent systems. Model-agnostic but optimized for Gemini. Strong on agent composition, built-in evaluation, and deployment to Google Cloud (Vertex AI Agent Engine). ADK agents are natively compatible with A2A (Agent-to-Agent protocol), Google's answer to MCP for agent interoperability.
+
+- [ADK Docs](https://google.github.io/adk-docs/)
+- [ADK GitHub](https://github.com/google/adk-python)
+- [A2A Protocol](https://google.github.io/A2A/)
+
 ### Which one to pick
 
 | Situation | Use |
@@ -174,6 +181,7 @@ Lightweight agent framework. Good for building agents fast with minimal boilerpl
 | Multi-agent without writing graph code | CrewAI |
 | Strongly typed, testable, single agent | Pydantic AI |
 | Microsoft/enterprise environment | Semantic Kernel or AutoGen |
+| Google Cloud / Gemini ecosystem | ADK |
 
 ---
 
