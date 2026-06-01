@@ -1,14 +1,14 @@
 # 01 - How LLMs Work
 
-Concepts, not math. The goal is to understand what's happening well enough to make good engineering decisions.
+Concepts, not math. The goal is to understand what is happening well enough to make good engineering decisions.
 
 ## The minimum you need to know
 
 ### Tokens
 
-LLMs don't read words. They read tokens — chunks of characters. "unbelievable" might be 3 tokens. A token is roughly 0.75 words on average.
+LLMs do not read words. They read tokens, which are chunks of characters. "unbelievable" might be three tokens. On average, one token is about 0.75 words.
 
-Why it matters: API pricing is per token. Context limits are in tokens. You need to estimate costs and debug "context exceeded" errors.
+This matters because API pricing is per token. Context limits are in tokens. You need to estimate costs and debug "context length exceeded" errors without panicking.
 
 ```python
 import tiktoken
@@ -20,19 +20,17 @@ print(len(tokens))  # 4
 
 ### Context window
 
-The total tokens the model can see at once — input plus output combined. GPT-4o: 128k. Claude: up to 200k.
+The total tokens a model can see in one call, input plus output combined. GPT-4o handles 128k tokens. Claude goes up to 200k.
 
-Why it matters: if your documents don't fit, you need RAG. If your conversation history grows too long, you need to truncate. This is a real engineering constraint you'll hit constantly.
+If your documents do not fit, you need RAG. If your conversation history keeps growing, you need to truncate it. This constraint comes up constantly in real production systems.
 
 ### Temperature
 
-Controls randomness. 0 = deterministic (same output every time). 1+ = more creative. For structured output like JSON or code, use 0. For creative tasks, use 0.7 to 1.
+Controls randomness. At 0, the model produces the same output every time. Higher values make responses more varied and creative. Use 0 for structured output like JSON or code. Use 0.7 to 1 for writing or brainstorming.
 
 ### Embeddings
 
-Text converted to a list of numbers (a vector) that captures meaning. Similar texts have vectors close together in space.
-
-Why it matters: the foundation of RAG. You embed your documents, embed the user's query, find the closest documents by vector similarity, and feed them to the model.
+A list of numbers (a vector) that represents the meaning of a piece of text. Similar texts end up with similar vectors. You use this to find relevant documents by meaning, not by keyword matching, which is the foundation of RAG.
 
 ```python
 from openai import OpenAI
@@ -47,11 +45,11 @@ vector = response.data[0].embedding  # list of 1536 floats
 
 ### How the Transformer works (high level)
 
-Input tokens → embeddings → attention layers → output token probabilities → sample next token → repeat.
+Input tokens get converted to embeddings, pass through attention layers, produce output token probabilities, sample the next token, and repeat.
 
-Attention is the key idea: each token looks at all other tokens in the context and decides how much to weight each one. That's how the model understands context and meaning.
+Attention is the key mechanism. Each token looks at every other token in the context and decides how much to weight each one. That is how the model understands relationships between words across long distances in the text.
 
-You don't need to implement this. You need to understand it well enough to explain it clearly.
+You do not need to implement this. You need to understand it well enough to explain it in an interview.
 
 ## Resources
 

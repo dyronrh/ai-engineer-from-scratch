@@ -1,40 +1,38 @@
 # Appendix - Fine-tuning
 
-Fine-tuning is rarely the right first move. Most production problems are better solved by improving the prompt, adding RAG, or using a better base model.
+Fine-tuning is rarely the right first move. Most production problems are better solved by improving the prompt, adding RAG, or switching to a better base model. This appendix exists so you know when it is the right call and how to approach it when it is.
 
-That said, it's useful to know when it matters and how it works.
+## When fine-tuning actually makes sense
 
-## When fine-tuning is actually the right call
-
-- You need consistent output format or style that prompting can't reliably produce
-- You have a specific domain or persona that's too complex for a system prompt
+- You need consistent output format or style that prompting cannot reliably produce
+- You have a specific domain or persona that is too complex for a system prompt
 - Latency is critical and you need a smaller, faster model that behaves like a larger one
-- You have 50+ high-quality labeled examples and can measure improvement
+- You have 50+ high-quality labeled examples and can measure the improvement objectively
 
-Not the right call if:
-- You want the model to "know" new facts (use RAG)
+When it does not make sense:
+- You want the model to know new facts (use RAG for that)
 - You have fewer than 50 examples
-- You haven't tried prompt engineering first
+- You have not tried prompt engineering first
 
 ## Decision tree
 
 ```
 Can better prompting fix it?
-    YES → fix the prompt
+    YES -> fix the prompt
     NO  |
         v
 Can RAG fix it (knowledge gap)?
-    YES → use RAG
+    YES -> use RAG
     NO  |
         v
 Is it a style/format/behavior issue?
-    YES → consider fine-tuning
-    NO  → reconsider the problem
+    YES -> consider fine-tuning
+    NO  -> reconsider the problem
 ```
 
 ## LoRA and QLoRA
 
-Full fine-tuning requires dozens of GB of GPU VRAM. LoRA and QLoRA make it practical on consumer hardware.
+Full fine-tuning requires 40GB+ of GPU VRAM. LoRA and QLoRA make fine-tuning practical on consumer hardware by training only a small set of adapter weights.
 
 | Method | VRAM needed | Quality |
 |---|---|---|

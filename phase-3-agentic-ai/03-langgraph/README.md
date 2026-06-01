@@ -1,14 +1,14 @@
 # 03 - LangGraph
 
-Stateful, controllable agents. In 39.9% of agentic AI engineering job postings.
+Stateful, controllable agents. Appears in 39.9% of agentic AI engineering job postings.
 
-LangGraph models an agent as a graph: nodes are functions (LLM calls, tool calls, logic), edges are transitions, and state is passed between them. This gives you control, visibility, and persistence that simple chain-based agents don't have.
+LangGraph models an agent as a graph. Nodes are functions (LLM calls, tool calls, any logic you want). Edges are transitions between them. State is passed along as the graph runs. This gives you branching, looping, checkpointing, and visibility that simple chain-based agents cannot provide.
 
 ## Core concepts
 
 ### State
 
-The object that travels through the graph. Every node reads from it and writes to it.
+The object that travels through the graph. Every node reads from it and writes updates back to it.
 
 ```python
 from typing import TypedDict, Annotated
@@ -30,14 +30,13 @@ def call_llm(state: AgentState) -> dict:
     return {"messages": [response]}
 
 def run_tool(state: AgentState) -> dict:
-    # execute the tool the LLM requested
     result = execute_tool(state["tool_calls"][-1])
     return {"messages": [ToolMessage(content=result)]}
 ```
 
 ### Edges
 
-Connect nodes. Can be conditional — route based on state.
+Connect nodes. Conditional edges route based on the current state, which is how you get the agent to loop or stop.
 
 ```python
 from langgraph.graph import StateGraph, END
@@ -45,8 +44,8 @@ from langgraph.graph import StateGraph, END
 def should_continue(state: AgentState) -> str:
     last_message = state["messages"][-1]
     if last_message.tool_calls:
-        return "run_tool"   # model wants to use a tool
-    return END              # model has the answer
+        return "run_tool"
+    return END
 
 graph = StateGraph(AgentState)
 graph.add_node("call_llm", call_llm)
@@ -60,7 +59,7 @@ agent = graph.compile()
 
 ### Persistence (checkpointing)
 
-Save and resume agent state. Essential for long-running agents and human-in-the-loop.
+Save and resume agent state across calls. Essential for long-running agents, multi-turn conversations, and any human-in-the-loop flow.
 
 ```python
 from langgraph.checkpoint.sqlite import SqliteSaver

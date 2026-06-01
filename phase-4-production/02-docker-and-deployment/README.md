@@ -1,6 +1,6 @@
 # 02 - Docker and Deployment
 
-Containerize it. Ship it. Make it someone else's problem to run (in a good way).
+Containerize it. Ship it. Make it reproducible on any machine.
 
 ## Dockerfile for a FastAPI AI app
 
@@ -20,7 +20,7 @@ CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
 
 ## Docker Compose for local dev
 
-Spin up your API, a vector database, and monitoring together.
+Run your API, a vector database, and monitoring together with one command.
 
 ```yaml
 services:

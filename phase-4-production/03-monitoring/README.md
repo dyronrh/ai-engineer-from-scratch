@@ -1,20 +1,20 @@
 # 03 - Monitoring
 
-A 200 status code doesn't mean the answer was good. LLM apps need different monitoring than traditional software.
+A 200 status code does not mean the answer was good. LLM applications need a different approach to monitoring than traditional software.
 
-## What to monitor
+## What to track
 
 | Signal | Why |
 |---|---|
 | Latency per request | User experience degrades fast above 3 seconds |
-| Token usage and cost | LLM bills compound — catch spikes early |
+| Token usage and cost | LLM costs compound quickly. Catch spikes early. |
 | Error rate | API errors, timeouts, rate limits |
 | Answer quality | Are responses actually correct and relevant? |
 | Cache hit rate | Are you paying for the same prompt twice? |
 
 ## Langfuse
 
-Traces every LLM call — prompt, response, latency, cost, model — queryable in a dashboard.
+Traces every LLM call with prompt, response, latency, cost, and model, all queryable in a dashboard.
 
 ```python
 from langfuse.decorators import observe, langfuse_context
@@ -31,17 +31,15 @@ async def run_agent(question: str) -> str:
 ```
 
 ```bash
-# local Langfuse with Docker
 docker run -p 3000:3000 langfuse/langfuse
 ```
 
 ## Guardrails
 
-Validate inputs and outputs at the boundary between your app and the model.
+Validate inputs and outputs at the boundary between your app and the model. Do not rely on the model to catch bad inputs.
 
 ```python
 def validate_input(text: str) -> str:
-    # block obvious prompt injection
     injection_patterns = [
         "ignore previous instructions",
         "system prompt",
@@ -50,7 +48,7 @@ def validate_input(text: str) -> str:
     lower = text.lower()
     for pattern in injection_patterns:
         if pattern in lower:
-            raise ValueError(f"Input rejected: potential injection")
+            raise ValueError("Input rejected: potential injection")
     return text
 
 def validate_output(text: str, max_length: int = 5000) -> str:
@@ -61,7 +59,7 @@ def validate_output(text: str, max_length: int = 5000) -> str:
 
 ## Evaluation pipeline
 
-Run automated evals on every deployment to catch regressions.
+Run automated evals on every deployment to catch quality regressions before users do.
 
 ```python
 # evals/run_evals.py

@@ -1,6 +1,6 @@
 # 03 - Prompt Engineering
 
-Not a soft skill. Engineering: write a prompt, measure outputs, iterate. These techniques have documented, measurable effects on output quality.
+Not a soft skill. Write a prompt, measure outputs, iterate. These techniques have documented, measurable effects on output quality and every AI Engineer role expects you to know them.
 
 ## Core techniques
 
@@ -24,7 +24,7 @@ messages = [
 
 ### Few-shot
 
-Show examples of input/output before the real request. Dramatically improves format consistency.
+Show examples of input and output before the real request. Dramatically improves format consistency, especially for structured data.
 
 ```python
 examples = """
@@ -40,7 +40,7 @@ Output:"""
 
 ### Chain-of-Thought
 
-Tell the model to reason step by step before answering. Works especially well for logic and multi-step problems.
+Tell the model to reason step by step before answering. Works particularly well for logic and multi-step problems.
 
 ```python
 prompt = """
@@ -54,7 +54,7 @@ Step 1:
 
 ### Self-consistency
 
-Run the same prompt multiple times with temperature > 0 and take the majority answer. More reliable than a single run for reasoning tasks.
+Run the same prompt multiple times with temperature above 0 and take the majority answer. More reliable than a single pass for reasoning tasks.
 
 ```python
 answers = await asyncio.gather(*[ask(question) for _ in range(5)])
@@ -63,7 +63,7 @@ answers = await asyncio.gather(*[ask(question) for _ in range(5)])
 
 ### Structured output instructions
 
-Be explicit about format. Use JSON examples in the prompt when you can't use the structured output API.
+Be explicit about format. When you cannot use the structured output API, put a JSON example directly in the prompt.
 
 ```python
 prompt = """
@@ -81,11 +81,11 @@ Text: ...
 
 ## What actually matters in production
 
-1. Be specific — vague prompts get vague results
-2. Show the format — don't describe it, show an example
-3. Set constraints — tell the model what NOT to do
-4. Test against a set of examples — not just one
-5. Version your prompts — treat them like code
+1. Be specific. Vague prompts produce vague results.
+2. Show the format. Do not describe it, show an example.
+3. Set constraints. Tell the model what not to do.
+4. Test against a set of examples, not just one.
+5. Version your prompts. Treat them like code, because they are.
 
 ## Resources
 

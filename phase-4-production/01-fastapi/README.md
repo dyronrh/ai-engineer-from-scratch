@@ -69,7 +69,9 @@ async def query(
     ...
 ```
 
-## Health check (required for every deployed service)
+## Health check
+
+Add one to every service you deploy. Load balancers and orchestrators depend on it.
 
 ```python
 @app.get("/health")

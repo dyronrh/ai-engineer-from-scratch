@@ -1,6 +1,6 @@
 # 02 - API and Tool Use
 
-Calling LLMs is easy. Calling them reliably, with structured output, while handling errors and streaming — that's the skill.
+Calling LLMs is straightforward. Calling them reliably, with structured output, while handling streaming and errors, is where the engineering skill lives.
 
 ## OpenAI API
 
@@ -94,7 +94,7 @@ response = client.messages.create(
 
 ### Prompt caching
 
-Cuts cost by up to 90% when sending the same large context repeatedly.
+Cuts cost by up to 90% when you send the same large context repeatedly. Worth setting up from day one if you use a fixed system prompt.
 
 ```python
 response = client.messages.create(

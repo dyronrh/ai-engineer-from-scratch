@@ -7,9 +7,9 @@
 
 ## What this phase covers
 
-How LLMs work at a conceptual level, how to call them through APIs, how to use function/tool calling, and how to write prompts that reliably produce the output you need.
+How LLMs work at a conceptual level, how to call them through APIs, how to use function and tool calling, and how to write prompts that reliably produce the output you need.
 
-This is the skill that shows up in more job postings than any other in the AI Engineer category — OpenAI, Anthropic, Ollama, HuggingFace. You need to be fluent with all of them.
+This is the skill that appears in more AI Engineer job postings than anything else. OpenAI, Anthropic, Ollama, HuggingFace. You need to be comfortable with all of them.
 
 ---
 
@@ -17,13 +17,13 @@ This is the skill that shows up in more job postings than any other in the AI En
 
 ### [01 - How LLMs Work](./01-how-llms-work/)
 
-You don't need to know the math. You do need to understand the concepts — tokens, context window, temperature, embeddings, attention — well enough to explain them and make good decisions when building.
+You do not need to know the math. You do need to understand tokens, context windows, temperature, embeddings, and attention well enough to explain them and make good decisions when building.
 
 **Topics:**
-- Tokens and tokenization (what goes in and comes out)
-- Context window and how to work within it in practice
-- Temperature and sampling — when to use each setting
-- Embeddings — what they are and why they matter for RAG
+- Tokens and tokenization
+- Context window constraints and how to work within them
+- Temperature and sampling settings
+- Embeddings and why they matter for RAG
 - Transformer architecture at a high level
 
 **Resources:**
@@ -37,13 +37,13 @@ You don't need to know the math. You do need to understand the concepts — toke
 
 ### [02 - API and Tool Use](./02-api-and-tool-use/) — highest priority
 
-The core skill. Call APIs, get structured responses, let the model call your functions. This is what every company building AI products needs.
+The core skill. Call APIs, get structured responses, let the model call your functions. Every company building AI products needs engineers who can do this reliably.
 
 **Topics:**
 - OpenAI API: chat completions, streaming, function calling, structured outputs
 - Anthropic Claude API: tool use, system prompts, streaming, prompt caching
-- Local models with Ollama — run any open model for free, no API cost
-- HuggingFace Inference API — thousands of models, one interface
+- Local models with Ollama, any open model, no API cost
+- HuggingFace Inference API, thousands of models, one interface
 - Structured output: reliable JSON responses with Pydantic
 
 **Resources:**
@@ -58,7 +58,7 @@ The core skill. Call APIs, get structured responses, let the model call your fun
 
 ### [03 - Prompt Engineering](./03-prompt-engineering/)
 
-Not magic. Engineering: write a prompt, measure the output, iterate. These techniques have measurable impact and are expected in every AI Engineer role.
+Not magic. Write a prompt, measure the output, iterate. These techniques have real, measurable impact on output quality and are expected knowledge in every AI Engineer role.
 
 **Techniques:**
 | Technique | When to use |
@@ -82,9 +82,7 @@ Not magic. Engineering: write a prompt, measure the output, iterate. These techn
 
 **Multi-provider LLM router**
 
-A script that sends the same prompt to OpenAI, Anthropic, and Ollama in parallel, collects structured JSON responses, and compares the outputs.
-
-Demonstrates: async API calls, tool/function use, structured output, provider abstraction.
+A script that sends the same prompt to OpenAI, Anthropic, and Ollama in parallel, collects structured JSON responses, and compares outputs. Covers async API calls, tool use, structured output, and provider abstraction in one project.
 
 Project folder: [`02-api-and-tool-use/project/`](./02-api-and-tool-use/project/)
 
@@ -92,10 +90,10 @@ Project folder: [`02-api-and-tool-use/project/`](./02-api-and-tool-use/project/)
 
 ## Phase checklist
 
-- [ ] Called OpenAI with streaming and printed tokens as they arrive
+- [ ] Called OpenAI with streaming and printed tokens as they arrived
 - [ ] Used function calling to have the model invoke a real Python function
 - [ ] Used Anthropic tool use with Claude
-- [ ] Ran a local model with Ollama — no API key needed
+- [ ] Ran a local model with Ollama, no API key needed
 - [ ] Got a reliable JSON response from a model using a Pydantic schema
 - [ ] Wrote a few-shot prompt and measured the improvement over zero-shot
 

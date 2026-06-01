@@ -1,20 +1,20 @@
-# Final Project · Multi-Agent Research Assistant
+# Final Project: Multi-Agent Research Assistant
 
-The capstone. Everything from the four phases in one system.
+The capstone. Everything from the four phases in one real system.
 
-This is not a tutorial project - it's a real, deployable application that demonstrates you can build end-to-end AI systems.
+This is not a tutorial project. It is a deployable application that shows you can build end-to-end AI systems, the kind of thing you put in a portfolio and walk through in an interview.
 
 ---
 
 ## What it does
 
-A research assistant that takes a topic or question from the user and produces a comprehensive, well-cited report by:
+The assistant takes a topic or question, then produces a comprehensive, well-cited report by:
 
 1. **Planning** - breaking the topic into sub-questions
 2. **Retrieving** - searching a document collection with RAG
-3. **Analyzing** - specialist agents process different angles
+3. **Analyzing** - specialist agents handle different angles in parallel
 4. **Synthesizing** - a coordinator agent assembles the final report
-5. **Citing** - every claim is traced to its source document
+5. **Citing** - every claim is traced back to a source document
 
 ---
 
@@ -22,30 +22,30 @@ A research assistant that takes a topic or question from the user and produces a
 
 ```
 User query
-    │
-    ▼
-┌─────────────────┐
-│  Planner Agent  │  ← breaks query into sub-tasks
-└────────┬────────┘
-         │ delegates
-    ┌────┴────┐
-    │         │
-    ▼         ▼
-┌────────┐ ┌────────┐
-│  RAG   │ │  RAG   │  ← specialist agents retrieve
-│ Agent 1│ │ Agent 2│     from document collection
-└────┬───┘ └────┬───┘
-    │           │
-    └─────┬─────┘
-          │
-          ▼
-┌──────────────────┐
-│ Synthesis Agent  │  ← assembles final report
-└─────────┬────────┘
-          │
-          ▼
-   Structured report
-   with cited sources
+    |
+    v
++------------------+
+|  Planner Agent   |  <- breaks query into sub-tasks
++--------+---------+
+         |
+    +----+----+
+    |         |
+    v         v
++--------+ +--------+
+|  RAG   | |  RAG   |  <- specialist agents retrieve
+| Agent 1| | Agent 2|     from document collection
++----+---+ +----+---+
+    |           |
+    +-----------+
+          |
+          v
++------------------+
+| Synthesis Agent  |  <- assembles final report
++--------+---------+
+         |
+         v
+  Structured report
+  with cited sources
 ```
 
 ---
@@ -71,27 +71,27 @@ User query
 ```
 final-project/
 ├── agents/
-│   ├── planner.py          ← breaks query into sub-tasks
-│   ├── researcher.py       ← RAG-powered specialist agent
-│   ├── synthesizer.py      ← assembles final report
-│   └── coordinator.py      ← LangGraph graph definition
+│   ├── planner.py          <- breaks query into sub-tasks
+│   ├── researcher.py       <- RAG-powered specialist agent
+│   ├── synthesizer.py      <- assembles final report
+│   └── coordinator.py      <- LangGraph graph definition
 │
 ├── rag/
-│   ├── ingest.py           ← load and index documents
-│   ├── retriever.py        ← query vector DB
-│   └── embedder.py         ← embedding model wrapper
+│   ├── ingest.py           <- load and index documents
+│   ├── retriever.py        <- query vector DB
+│   └── embedder.py         <- embedding model wrapper
 │
 ├── api/
-│   ├── main.py             ← FastAPI app
-│   ├── models.py           ← request/response schemas
-│   └── middleware.py       ← auth, rate limiting, logging
+│   ├── main.py             <- FastAPI app
+│   ├── models.py           <- request/response schemas
+│   └── middleware.py       <- auth, rate limiting, logging
 │
 ├── evals/
-│   ├── golden_set.json     ← question + expected answer pairs
-│   ├── run_evals.py        ← evaluation script
-│   └── metrics.py          ← faithfulness, relevance, citation accuracy
+│   ├── golden_set.json     <- question + expected answer pairs
+│   ├── run_evals.py        <- evaluation script
+│   └── metrics.py          <- faithfulness, relevance, citation accuracy
 │
-├── documents/              ← your document collection (gitignored)
+├── documents/              <- your document collection (gitignored)
 │
 ├── tests/
 │   ├── test_agents.py
@@ -107,7 +107,7 @@ final-project/
 ├── docker-compose.yml
 ├── requirements.txt
 ├── .env.example
-└── README.md               ← this file
+└── README.md
 ```
 
 ---
@@ -119,7 +119,7 @@ final-project/
 - Python 3.11+
 - Docker and Docker Compose
 - An OpenAI or Anthropic API key
-- A Langfuse account (free tier works)
+- A Langfuse account (free tier works fine)
 
 ### Local setup
 
@@ -163,16 +163,16 @@ python evals/run_evals.py \
 
 ## Success criteria
 
-This project is complete when:
+The project is complete when:
 
 - [ ] Multi-agent system runs end-to-end without errors
-- [ ] RAG retrieval faithfulness score > 0.80 on the eval set
+- [ ] RAG retrieval faithfulness score is above 0.80 on the eval set
 - [ ] API handles 10 concurrent requests without crashing
 - [ ] All requests are traced in Langfuse
 - [ ] Tests cover the main agent flows
 - [ ] CI/CD pipeline runs on every push
 - [ ] Docker deployment works on a fresh machine
-- [ ] The README explains how to reproduce everything
+- [ ] The README explains how to reproduce everything from scratch
 
 ---
 
@@ -191,13 +191,13 @@ This project is complete when:
 
 ## Extending the project (optional)
 
-Once the base works, possible additions:
+Once the base version works:
 
 - **Web interface** - React or Streamlit frontend
-- **Streaming** - stream the report as it's generated
+- **Streaming** - stream the report as it generates
 - **Document upload** - API endpoint to add new documents
 - **Auth** - API key authentication
 - **Caching** - cache common queries to cut costs
-- **Multi-modal** - support PDFs with images, charts
+- **Multi-modal** - support PDFs with images and charts
 
-Pick one. Ship it. Add it to your portfolio.
+Pick one extension, ship it, and add it to your portfolio.

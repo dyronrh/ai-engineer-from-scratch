@@ -1,20 +1,21 @@
 # 01 - RAG Systems
 
-Making LLMs answer questions about your data. The most deployed production pattern for LLM applications in 2024-2025.
+Making LLMs answer questions about your own data. The most deployed production pattern for LLM applications in 2024-2025.
 
 ## Why RAG instead of fine-tuning
 
-Fine-tuning bakes knowledge into weights: expensive to run, slow to update, impossible to audit sources.  
-RAG retrieves at inference time: cheap, always fresh, every answer traceable to a source document.
+Fine-tuning bakes knowledge into model weights. It is expensive to run, slow to update, and every answer is impossible to trace back to a source.
 
-Default to RAG. Fine-tune only when RAG and prompt engineering aren't enough.
+RAG retrieves at inference time. It is cheap, always current, and every answer can be traced to the exact document chunk that produced it.
+
+Default to RAG. Fine-tune only when RAG and prompt engineering have both failed you.
 
 ## The pipeline
 
 ```
 Your documents
     |
-    v chunk (split into pieces - 200 to 1000 tokens each)
+    v chunk (split into pieces, 200 to 1000 tokens each)
     |
     v embed (convert each chunk to a vector)
     |
@@ -32,14 +33,14 @@ User question
 
 ## Chunking
 
-How you split documents matters more than most people think.
+How you split documents matters more than most people expect. Chunks that are too large dilute the signal. Chunks that are too small lose context. Overlap helps prevent information loss at boundaries.
 
 ```python
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 splitter = RecursiveCharacterTextSplitter(
     chunk_size=512,
-    chunk_overlap=64,  # overlap prevents losing context at boundaries
+    chunk_overlap=64,
     separators=["\n\n", "\n", ".", " "],
 )
 chunks = splitter.split_text(document_text)
@@ -63,7 +64,7 @@ collection = client.create_collection("my-docs")
 
 collection.add(
     documents=chunks,
-    embeddings=embeddings,    # pre-computed or let Chroma compute
+    embeddings=embeddings,
     ids=[f"chunk-{i}" for i in range(len(chunks))],
 )
 
@@ -74,7 +75,7 @@ results = collection.query(query_texts=["What is RAG?"], n_results=5)
 
 ### HyDE (Hypothetical Document Embeddings)
 
-Instead of embedding the question directly, ask the LLM to write a hypothetical answer, then embed that. Often retrieves better chunks.
+Instead of embedding the user's question directly, ask the LLM to write a hypothetical answer first, then embed that. It often retrieves better chunks because the hypothetical answer looks more like the documents than the question does.
 
 ```python
 hypothetical_answer = await llm("Write a short paragraph answering: " + question)
@@ -83,7 +84,7 @@ results = collection.query(query_texts=[hypothetical_answer], n_results=5)
 
 ### Reranking
 
-After retrieval, use a cross-encoder to re-score and re-order chunks for better precision.
+After retrieval, use a cross-encoder to score and reorder chunks for better precision. The initial retrieval casts a wide net. Reranking picks the best fish.
 
 ```python
 from sentence_transformers import CrossEncoder
@@ -95,7 +96,7 @@ ranked = sorted(zip(scores, retrieved_chunks), reverse=True)
 
 ## Evaluating RAG
 
-Don't ship a RAG system without measuring it. Use RAGAS.
+Do not ship a RAG system without measuring it first. Use RAGAS.
 
 ```python
 from ragas import evaluate
@@ -109,7 +110,7 @@ print(results)
 # faithfulness: 0.87, answer_relevancy: 0.91, context_recall: 0.83
 ```
 
-Target: faithfulness > 0.80, answer relevancy > 0.80 before shipping.
+Target faithfulness above 0.80 and answer relevancy above 0.80 before shipping anything to production.
 
 ## Exercises
 

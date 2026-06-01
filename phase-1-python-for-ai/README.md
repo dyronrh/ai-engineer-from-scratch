@@ -1,7 +1,7 @@
 # Phase 1 - Python for AI
 
 **Duration:** 2-4 weeks  
-**Goal:** Write async, typed Python. Call HTTP APIs. Handle JSON and environment config. Be fluent enough that the language never slows you down.
+**Goal:** Write async, typed Python. Call HTTP APIs. Handle JSON and environment config. Get fluent enough that the language never slows you down.
 
 No math. No ML theory. Just Python as a working tool.
 
@@ -9,12 +9,13 @@ No math. No ML theory. Just Python as a working tool.
 
 ## Why only Python here
 
-Based on real job postings:
-- Python appears in 82% of AI Engineer roles — it's the one true prerequisite
-- Math and ML theory appear in <20% of postings, mostly for ML Engineer roles (a different job)
-- LLM APIs, RAG, and agents all run on Python + HTTP + JSON
+Real job posting data is blunt about this:
 
-Get Python solid and move to Phase 2. Everything else builds on top of it.
+- Python shows up in 82% of AI Engineer roles. It is the one real prerequisite.
+- Math and ML theory appear in fewer than 20% of postings, mostly for ML Engineer roles, which is a different job.
+- LLM APIs, RAG, and agents all run on Python, HTTP, and JSON.
+
+Get Python solid, then move to Phase 2. Everything else builds on top of it.
 
 ---
 
@@ -34,7 +35,7 @@ By the end of this phase:
 
 ### Async Python
 
-Most LLM work involves waiting for API responses. Async lets you run multiple calls at the same time instead of one by one.
+Most LLM work is just waiting. You send a request and wait for the model to respond. Async lets you fire off multiple requests at the same time instead of waiting for each one to finish before starting the next.
 
 ```python
 import asyncio
@@ -57,7 +58,7 @@ Resource: [Real Python - Async IO](https://realpython.com/async-io-python/)
 
 ### Type hints and OOP
 
-Type hints make your code readable and catch bugs before runtime. Expected in any production AI codebase.
+Type hints make your code readable and catch bugs before runtime. Any production AI codebase you join will expect this.
 
 ```python
 from dataclasses import dataclass
@@ -75,7 +76,7 @@ Resource: [Python Docs - typing](https://docs.python.org/3/library/typing.html)
 
 ### Environment config
 
-Never hardcode API keys. Use `.env` files and `python-dotenv`.
+Never hardcode API keys. Use `.env` files and `python-dotenv`. This is non-negotiable in any real project.
 
 ```python
 from dotenv import load_dotenv
@@ -87,13 +88,13 @@ api_key = os.getenv("OPENAI_API_KEY")
 
 ### HTTP APIs with httpx
 
-Better than `requests` for async work. You'll use this constantly to call LLM APIs and build integrations.
+`httpx` is better than `requests` for async work. You will use it constantly when calling LLM APIs and building integrations.
 
 Resource: [HTTPX Docs](https://www.python-httpx.org/)
 
 ### Pandas basics
 
-Load datasets, inspect data, prepare inputs for LLM pipelines.
+Load datasets, inspect data, prepare inputs for LLM pipelines. You do not need to be a data scientist. You need to be able to load a CSV and filter it without looking things up.
 
 Resource: [Kaggle Learn - Pandas](https://www.kaggle.com/learn/pandas)
 
@@ -119,7 +120,7 @@ pip install httpx pandas python-dotenv pydantic
 
 ## When you're ready for Phase 2
 
-You should be able to write a script that:
+Write a script that:
 1. Loads an API key from `.env`
 2. Makes 3 concurrent async HTTP requests
 3. Parses the responses into typed Pydantic models

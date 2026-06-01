@@ -1,10 +1,10 @@
 # 02 - Agentic Patterns
 
-The recurring patterns that make agents actually work. Learn these before jumping into frameworks — you'll understand what LangGraph is doing and why.
+The recurring patterns that make agents work in practice. Learn these before jumping into a framework. When you understand the patterns, you understand what LangGraph is doing and why, instead of just copying examples.
 
 ## ReAct (Reason + Act)
 
-The foundation of most production agents. The model thinks before it acts, then observes the result, then thinks again.
+The foundation of most production agents. The model thinks before it acts, observes the result, then thinks again.
 
 ```
 Thought: I need to find the current price of NVDA stock
@@ -14,7 +14,7 @@ Thought: I have the price, I can answer now
 Answer: NVDA is currently at $127.50
 ```
 
-Why it works: forcing the model to reason before acting reduces hallucination and improves tool selection.
+Forcing the model to reason before acting reduces hallucination and improves tool selection. It sounds simple, but it makes a real difference.
 
 ```python
 REACT_PROMPT = """
@@ -46,29 +46,28 @@ Plan:
 5. Write summary with findings
 ```
 
-Good for: complex tasks where the sequence of steps matters.
-Bad for: simple tasks where planning overhead isn't worth it.
+Good for complex tasks where the sequence matters. Not worth the overhead for simple, single-step tasks.
 
 ## Reflection
 
-The agent evaluates its own output and tries again if it's not good enough.
+The agent evaluates its own output and retries if it falls short.
 
 ```
 Draft answer: [generated text]
 Reflection: Does this answer the question? Is it accurate? Is it complete?
-Score: 6/10 - missing recent data
+Score: 6/10, missing recent data
 Retry: [new attempt with corrected approach]
 ```
 
 ## Tool use
 
-The model decides when and how to use external tools. The key design decision is how to define tools — description quality matters as much as implementation quality.
+The model decides when and how to use external tools. Tool descriptions matter as much as the implementation. A poorly described tool will be used incorrectly or ignored.
 
 ```python
 tools = [
     {
         "name": "search",
-        "description": "Search the web for current, factual information. Use when you need real-time data, recent events, or facts you're not confident about.",
+        "description": "Search the web for current, factual information. Use when you need real-time data, recent events, or facts you are not confident about.",
         "input_schema": {"type": "object", "properties": {"query": {"type": "string"}}, "required": ["query"]}
     }
 ]

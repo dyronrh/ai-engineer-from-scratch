@@ -1,8 +1,8 @@
 # ai-engineer-from-scratch
 
-A practical path to becoming an AI Engineer in the agentic era. Built from what companies are actually hiring for right now.
+A practical roadmap to becoming an AI Engineer in the agentic era, built from what companies are actually hiring for right now.
 
-Not another "learn ML from scratch" repo. The job market shifted. Companies are not hiring people to train models — they hire people who can build systems that use them. Agents, RAG, MCP, production APIs. That's the stack.
+This is not another "learn ML from scratch" repo. The job market shifted a few years ago and hasn't looked back. Companies stopped hiring people to train models and started hiring people who can build systems on top of them. Agents, RAG, MCP, production APIs. That is the actual job.
 
 **Time:** 6-9 months at 10-15 hours per week  
 **Cost:** 100% free resources  
@@ -19,12 +19,12 @@ Not another "learn ML from scratch" repo. The job market shifted. Companies are 
 | RAG systems | Dominant production use case across all company sizes |
 | AI Agents | 980% job posting growth from 2023 to 2024 |
 | FastAPI + Docker | 1,700+ active postings combining AI with these tools |
-| MCP (Model Context Protocol) | Emerging standard — already in job descriptions |
+| MCP (Model Context Protocol) | Emerging standard already in job descriptions |
 
-**What the market does NOT care about as much:**
-- Math (linear algebra, calculus) — explicit in <20% of AI Engineer postings
-- Training models from scratch — that's ML Engineer, a different and narrower role
-- Deep learning theory — useful context, not a hiring requirement
+**What the market does not care about as much:**
+- Math (linear algebra, calculus) shows up explicitly in fewer than 20% of AI Engineer postings
+- Training models from scratch is an ML Engineer job, which is a different and narrower role
+- Deep learning theory is useful background, but it is not a hiring requirement
 
 This roadmap targets AI Engineer and LLM Engineer roles, where demand is growing fastest.
 
@@ -66,43 +66,43 @@ Phase 4 - Production (4-6 weeks)
 
 ## Generative AI: core concepts
 
-Before diving in, these are the ideas that show up everywhere. You don't need to memorize them upfront - come back here when something doesn't click.
+These are the ideas that come up everywhere. You do not need to memorize them before starting. Read through once, then come back when something does not click.
 
-**Large Language Model (LLM)**
-A neural network trained on massive amounts of text that can generate coherent, contextually relevant text. GPT-4, Claude, Gemini, and Llama are all LLMs. They predict the next token given all previous tokens.
+**Large Language Model (LLM)**  
+A neural network trained on massive amounts of text. It generates output by predicting the next token given everything that came before. GPT-4, Claude, Gemini, and Llama are all LLMs. The quality difference between models matters a lot in practice.
 
-**Token**
-The unit LLMs read and write. Not words - chunks of characters. "unbelievable" might be 3 tokens. Pricing, context limits, and speed all work in tokens. Rule of thumb: 1 token is roughly 0.75 words.
+**Token**  
+The unit LLMs read and write. Not words, chunks of characters. "unbelievable" might be three tokens. API pricing, context limits, and speed all work in tokens. A rough rule: one token is about 0.75 words.
 
-**Context window**
-The maximum number of tokens an LLM can process in one call - input plus output combined. GPT-4o: 128k. Claude: up to 200k. If your data doesn't fit, you need RAG.
+**Context window**  
+The maximum tokens an LLM can process in one call, input plus output combined. GPT-4o handles 128k. Claude goes up to 200k. When your data does not fit, you need RAG.
 
-**Prompt**
-The input you give a model. Everything you engineer about it - structure, examples, instructions, tone - is prompt engineering.
+**Prompt**  
+The input you send to a model. Everything you engineer about it, the structure, the examples, the instructions, is prompt engineering.
 
-**Embedding**
-A list of numbers (a vector) that represents the meaning of a piece of text. Similar texts have similar vectors. Used to search for relevant content by meaning, not exact keywords. The foundation of RAG.
+**Embedding**  
+A list of numbers representing the meaning of a piece of text. Similar texts have similar vectors. You use embeddings to search for relevant content by meaning rather than by keywords. It is the foundation of every RAG system.
 
-**RAG (Retrieval-Augmented Generation)**
-Instead of asking the model to recall facts from training, you retrieve the relevant information yourself and put it in the prompt. This is how you build LLM apps on your own data without fine-tuning.
+**RAG (Retrieval-Augmented Generation)**  
+Instead of asking the model to recall facts it may or may not have learned during training, you retrieve the relevant information yourself and put it in the prompt. This is how you build LLM applications on your own data without fine-tuning anything.
 
-**Agent**
-An LLM that can take actions - call tools, run code, search the web, write files - and loop until a goal is met. Not just one LLM call, but a reasoning loop.
+**Agent**  
+An LLM that can take actions: call tools, run code, search the web, write files, and loop until a goal is met. Not a single LLM call, but a reasoning loop.
 
-**Tool / Function calling**
-The ability to let the model invoke external functions (your code). The model decides when to call them and with what arguments. This is how agents interact with the world.
+**Tool / Function calling**  
+Letting the model invoke your functions. The model decides when to call them and with what arguments. This is how agents interact with the real world.
 
-**MCP (Model Context Protocol)**
-An open standard for connecting LLMs to tools and data sources. Instead of wiring every tool directly into your code, MCP defines a universal protocol - one server, any client.
+**MCP (Model Context Protocol)**  
+An open standard for connecting LLMs to tools and data sources. Instead of writing custom integration code for every tool, MCP defines a universal protocol. One server, any client.
 
-**Fine-tuning**
-Training a pre-trained model further on your own data to change its behavior. Expensive and rarely the right first choice - prompt engineering and RAG solve most problems without it.
+**Fine-tuning**  
+Training a pre-trained model further on your own data to change its behavior. It is expensive, slow to update, and rarely the right first choice. Prompt engineering and RAG solve most problems without it.
 
-**Vector database**
-A database optimized for storing and searching embeddings. You put your document vectors in; you query with a vector; it returns the closest matches. Examples: Chroma, Pinecone, pgvector, Qdrant.
+**Vector database**  
+A database built for storing and searching embeddings. You store document vectors, query with a vector, and get back the closest matches. Common options: Chroma, Pinecone, pgvector, Qdrant.
 
-**Inference**
-Running a model to generate output. As opposed to training. When you call the OpenAI API, you're doing inference.
+**Inference**  
+Running a model to generate output, as opposed to training it. When you call the OpenAI API, you are doing inference.
 
 ---
 
@@ -144,8 +144,8 @@ Running a model to generate output. As opposed to training. When you call the Op
 | Profile | Where to start |
 |---|---|
 | Complete beginner | Phase 1, work through it fully |
-| Developer switching to AI | Phase 2 - you have the Python, skip Phase 1 |
-| Already using LLM APIs | Phase 3 - agentic patterns are where the gap usually is |
+| Developer switching to AI | Phase 2, you have the Python already |
+| Already calling LLM APIs | Phase 3, agentic patterns are where the gap usually is |
 | Building agents but not shipping them | Phase 4 |
 
 ---
@@ -191,7 +191,7 @@ ai-engineer-from-scratch/
 Folder: [`phase-1-python-for-ai/`](./phase-1-python-for-ai/)
 
 **Duration:** 2-4 weeks  
-**What you need to be able to do:** write async, typed Python and call HTTP APIs confidently.
+**Goal:** write async, typed Python and call HTTP APIs confidently.
 
 | Topic | Free resource | Time |
 |---|---|---|
@@ -201,7 +201,7 @@ Folder: [`phase-1-python-for-ai/`](./phase-1-python-for-ai/)
 | JSON, environment variables, .env files | [python-dotenv](https://pypi.org/project/python-dotenv/) | 1 day |
 | Pandas basics for data handling | [Kaggle Learn - Pandas](https://www.kaggle.com/learn/pandas) | 3 days |
 
-Skip if: you already write async Python at work.
+Skip this phase if you already write async Python at work.
 
 ---
 
@@ -210,7 +210,7 @@ Skip if: you already write async Python at work.
 Folder: [`phase-2-llm-engineering/`](./phase-2-llm-engineering/)
 
 **Duration:** 4-6 weeks  
-**What you need to be able to do:** call any LLM API, use tool/function calling, write prompts that work, run models locally.
+**Goal:** call any LLM API, use tool/function calling, write prompts that work, run models locally.
 
 | Topic | Free resource | Time |
 |---|---|---|
@@ -228,7 +228,7 @@ Folder: [`phase-2-llm-engineering/`](./phase-2-llm-engineering/)
 Folder: [`phase-3-agentic-ai/`](./phase-3-agentic-ai/)
 
 **Duration:** 6-8 weeks  
-**This is the core of the roadmap.** RAG and agents are what most companies are building right now. LangGraph appears in 39.9% of agentic job postings. MCP is the emerging standard for tool connectivity.
+**This is the core of the roadmap.** RAG and agents are what most companies are building. LangGraph appears in 39.9% of agentic job postings. MCP is the emerging standard for tool connectivity.
 
 ### RAG Systems
 | Topic | Free resource | Time |
@@ -254,7 +254,7 @@ Folder: [`phase-3-agentic-ai/`](./phase-3-agentic-ai/)
 Folder: [`phase-4-production/`](./phase-4-production/)
 
 **Duration:** 4-6 weeks  
-**What you need:** FastAPI + Docker is in 1,700+ active AI engineer job postings. Without this, you can build demos but not ship products.
+FastAPI + Docker is in 1,700+ active AI engineer job postings. You can build great agents and still be unemployable if you cannot ship them.
 
 | Topic | Free resource | Time |
 |---|---|---|
@@ -271,7 +271,7 @@ Folder: [`phase-4-production/`](./phase-4-production/)
 
 Folder: [`final-project/`](./final-project/)
 
-A **multi-agent research assistant** with RAG, deployed as a FastAPI service with Langfuse monitoring. Every component from the roadmap in one real system.
+A **multi-agent research assistant** with RAG, deployed as a FastAPI service with Langfuse monitoring. Every piece of the roadmap in one real system.
 
 ---
 
@@ -280,7 +280,7 @@ A **multi-agent research assistant** with RAG, deployed as a FastAPI service wit
 | Resource | Why |
 |---|---|
 | [fast.ai](https://fast.ai) | Best practical deep learning course if you want ML depth |
-| [DeepLearning.AI short courses](https://www.deeplearning.ai/courses/) | RAG, agents, LLMs by Andrew Ng - free |
+| [DeepLearning.AI short courses](https://www.deeplearning.ai/courses/) | RAG, agents, LLMs by Andrew Ng, all free |
 | [HuggingFace Learn](https://huggingface.co/learn) | Transformers, pipelines, hands-on |
 | [Andrej Karpathy YouTube](https://www.youtube.com/@AndrejKarpathy) | How LLMs actually work under the hood |
 | [LangChain blog](https://blog.langchain.dev/) | Agentic patterns as they emerge |

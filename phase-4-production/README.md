@@ -7,9 +7,9 @@
 
 ## What this phase covers
 
-The difference between a demo and a product. FastAPI + Docker appear in 1,700+ active AI engineer postings. 63% of companies report a shortage of engineers who can do this well.
+The gap between a demo and a product. FastAPI and Docker appear in 1,700+ active AI engineer postings, and 63% of companies report a shortage of engineers who can actually do this well.
 
-If you can build agents and RAG pipelines but can't ship them as a service, you're a prototype engineer. This phase fixes that.
+If you can build agents and RAG pipelines but cannot ship them as a service, you are a prototype engineer. This phase is about changing that.
 
 ---
 
@@ -17,13 +17,13 @@ If you can build agents and RAG pipelines but can't ship them as a service, you'
 
 ### [01 - FastAPI](./01-fastapi/)
 
-The standard for Python AI APIs. Async by default, automatic docs, Pydantic models, easy to test.
+The standard for Python AI APIs. Async by default, automatic docs, Pydantic models, and straightforward to test.
 
 **Topics:**
 - Async endpoints that call LLMs without blocking
-- Pydantic request/response schemas
+- Pydantic request and response schemas
 - Dependency injection for API keys and clients
-- Streaming responses (for LLM output)
+- Streaming responses for LLM output
 - Background tasks for long-running agent jobs
 - Health checks and basic auth
 
@@ -37,10 +37,10 @@ The standard for Python AI APIs. Async by default, automatic docs, Pydantic mode
 
 ### [02 - Docker and Deployment](./02-docker-and-deployment/)
 
-Containerize your app. Ship it to the cloud. Docker and Kubernetes are in 15-17% of all AI Engineer postings.
+Containerize your app and ship it to the cloud. Docker and Kubernetes appear in 15-17% of all AI Engineer postings.
 
 **Topics:**
-- Dockerfile for a FastAPI + LLM app
+- Dockerfile for a FastAPI and LLM app
 - Docker Compose for local multi-service setups (API + vector DB + monitoring)
 - Environment variables and secrets management
 - Deploying to AWS (ECS/App Runner) or GCP (Cloud Run)
@@ -57,10 +57,10 @@ Containerize your app. Ship it to the cloud. Docker and Kubernetes are in 15-17%
 
 ### [03 - Monitoring](./03-monitoring/)
 
-LLM apps break in ways traditional apps don't. A 200 response doesn't mean the answer was good. You need to trace prompts, measure quality, and catch regressions.
+LLM apps break in ways traditional apps do not. A 200 response does not mean the answer was good. You need to trace prompts, measure quality, and catch regressions before users do.
 
 **Topics:**
-- Langfuse: trace every LLM call — prompt, response, latency, cost
+- Langfuse: trace every LLM call, prompt, response, latency, cost
 - Structured logging for agent steps
 - Evaluation pipelines: run evals on every deployment
 - Guardrails: input validation, output validation, PII detection
@@ -79,7 +79,7 @@ LLM apps break in ways traditional apps don't. A 200 response doesn't mean the a
 
 **Production LLM API with monitoring**
 
-FastAPI service wrapping an agent pipeline, containerized with Docker, deployed to cloud, with Langfuse tracing and a GitHub Actions pipeline.
+A FastAPI service wrapping an agent pipeline, containerized with Docker, deployed to cloud, with Langfuse tracing and a GitHub Actions CI/CD pipeline.
 
 Project folder: [`02-docker-and-deployment/project/`](./02-docker-and-deployment/project/)
 
@@ -89,7 +89,7 @@ Project folder: [`02-docker-and-deployment/project/`](./02-docker-and-deployment
 
 - [ ] FastAPI service with async LLM endpoint and streaming
 - [ ] Containerized with Docker, runs on a fresh machine with `docker compose up`
-- [ ] Deployed to cloud — someone outside your network can hit it
+- [ ] Deployed to cloud, someone outside your network can hit it
 - [ ] GitHub Actions runs tests on push
 - [ ] Every LLM call is traced in Langfuse
 - [ ] Input guardrail blocks obvious prompt injection

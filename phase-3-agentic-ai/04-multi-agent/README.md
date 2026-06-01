@@ -1,19 +1,19 @@
 # 04 - Multi-Agent Systems
 
-One agent trying to do everything produces mediocre results. Multiple specialized agents — each focused, each tool-equipped — produce better outputs on complex tasks.
+One agent trying to handle everything produces mediocre results. Specialized agents, each with a narrow scope and the right tools, do better work on complex tasks.
 
 ## When to use multi-agent
 
-Use multi-agent when:
+Multi-agent makes sense when:
 - The task has clearly separable subtasks (research, writing, fact-checking)
 - Subtasks can run in parallel
-- Each subtask needs different tools or expertise
-- A single context window isn't enough for the full task
+- Each subtask needs different tools or a different area of focus
+- A single context window is not large enough for the full task
 
-Don't use multi-agent when:
-- The task is simple and sequential
-- You're adding coordination overhead for no real benefit
-- You need tight control over the execution order
+Skip it when:
+- The task is simple and runs sequentially
+- You would be adding coordination overhead for no real benefit
+- You need tight control over execution order and multi-agent complicates that
 
 ## Coordinator + specialist pattern
 
@@ -27,11 +27,11 @@ Coordinator
     |--- Review Agent (fact-checking, quality evaluation)
 ```
 
-The coordinator plans, delegates, and assembles the final result. Specialists have narrow scope and focused tools.
+The coordinator plans, delegates, and assembles the final result. Specialists stay narrow and focused.
 
 ## CrewAI
 
-Higher-level multi-agent orchestration. Less control than LangGraph, faster to build.
+Higher-level multi-agent orchestration. Less control than LangGraph, faster to get something working.
 
 ```python
 from crewai import Agent, Task, Crew
@@ -70,12 +70,12 @@ result = crew.kickoff(inputs={"topic": "agentic AI"})
 | File | What you build |
 |---|---|
 | `01_parallel_agents.py` | Two agents running the same query in parallel |
-| `02_coordinator_crew.py` | Coordinator that delegates to 3 specialists |
-| `03_crewai_pipeline.py` | Full research + write pipeline with CrewAI |
+| `02_coordinator_crew.py` | Coordinator delegating to 3 specialists |
+| `03_crewai_pipeline.py` | Full research and write pipeline with CrewAI |
 
 ## Phase project
 
-See [`project/`](./project/) - research agent with RAG and MCP.
+See [`project/`](./project/), a research agent with RAG and MCP.
 
 ## Resources
 
