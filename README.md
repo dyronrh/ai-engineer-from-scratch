@@ -64,6 +64,81 @@ Phase 4 - Production (4-6 weeks)
 
 ---
 
+## Generative AI: core concepts
+
+Before diving in, these are the ideas that show up everywhere. You don't need to memorize them upfront - come back here when something doesn't click.
+
+**Large Language Model (LLM)**
+A neural network trained on massive amounts of text that can generate coherent, contextually relevant text. GPT-4, Claude, Gemini, and Llama are all LLMs. They predict the next token given all previous tokens.
+
+**Token**
+The unit LLMs read and write. Not words - chunks of characters. "unbelievable" might be 3 tokens. Pricing, context limits, and speed all work in tokens. Rule of thumb: 1 token is roughly 0.75 words.
+
+**Context window**
+The maximum number of tokens an LLM can process in one call - input plus output combined. GPT-4o: 128k. Claude: up to 200k. If your data doesn't fit, you need RAG.
+
+**Prompt**
+The input you give a model. Everything you engineer about it - structure, examples, instructions, tone - is prompt engineering.
+
+**Embedding**
+A list of numbers (a vector) that represents the meaning of a piece of text. Similar texts have similar vectors. Used to search for relevant content by meaning, not exact keywords. The foundation of RAG.
+
+**RAG (Retrieval-Augmented Generation)**
+Instead of asking the model to recall facts from training, you retrieve the relevant information yourself and put it in the prompt. This is how you build LLM apps on your own data without fine-tuning.
+
+**Agent**
+An LLM that can take actions - call tools, run code, search the web, write files - and loop until a goal is met. Not just one LLM call, but a reasoning loop.
+
+**Tool / Function calling**
+The ability to let the model invoke external functions (your code). The model decides when to call them and with what arguments. This is how agents interact with the world.
+
+**MCP (Model Context Protocol)**
+An open standard for connecting LLMs to tools and data sources. Instead of wiring every tool directly into your code, MCP defines a universal protocol - one server, any client.
+
+**Fine-tuning**
+Training a pre-trained model further on your own data to change its behavior. Expensive and rarely the right first choice - prompt engineering and RAG solve most problems without it.
+
+**Vector database**
+A database optimized for storing and searching embeddings. You put your document vectors in; you query with a vector; it returns the closest matches. Examples: Chroma, Pinecone, pgvector, Qdrant.
+
+**Inference**
+Running a model to generate output. As opposed to training. When you call the OpenAI API, you're doing inference.
+
+---
+
+## Glossary
+
+| Term | What it means |
+|---|---|
+| **Prompt** | The text input you send to a model |
+| **Completion** | The model's output |
+| **System prompt** | Instructions that set the model's behavior for the whole conversation |
+| **Temperature** | Controls randomness. 0 = deterministic. 1+ = more creative |
+| **Top-p / nucleus sampling** | Alternative to temperature; controls diversity of outputs |
+| **Hallucination** | When the model confidently generates something false |
+| **Grounding** | Connecting model output to real data to reduce hallucination |
+| **Context stuffing** | Putting all relevant info in the prompt instead of relying on model memory |
+| **Chunking** | Splitting documents into smaller pieces before embedding them for RAG |
+| **Reranking** | After retrieval, scoring chunks again to pick the most relevant ones |
+| **Chain** | A sequence of LLM calls where the output of one feeds the input of the next |
+| **ReAct** | Reason + Act: the pattern where a model reasons about what to do, then does it |
+| **Agentic loop** | The cycle: think, act, observe result, think again |
+| **Orchestrator** | Code or a model that coordinates other agents or tools |
+| **HuggingFace** | Platform hosting thousands of open-source models you can run locally or via API |
+| **Ollama** | Tool for running open-source LLMs locally on your machine, no API key needed |
+| **LangChain** | Library for building LLM applications; components for chains, agents, retrieval |
+| **LangGraph** | Extension of LangChain for building stateful agents as graphs |
+| **Langfuse** | Open-source LLM observability: trace every call, measure cost and quality |
+| **RAGAS** | Framework for evaluating RAG pipelines on faithfulness, relevance, recall |
+| **Pydantic** | Python library for data validation and typed models; used for structured LLM output |
+| **Structured output** | Getting the model to return valid JSON matching a schema you define |
+| **Prompt caching** | Reusing computed context across calls to save cost and latency (Anthropic feature) |
+| **Tokenizer** | The component that converts text to tokens and back |
+| **tiktoken** | OpenAI's tokenizer library; lets you count tokens before sending a request |
+| **SSE (Server-Sent Events)** | How streaming LLM responses work over HTTP |
+
+---
+
 ## Who is this for
 
 | Profile | Where to start |

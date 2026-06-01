@@ -119,6 +119,64 @@ Anthropic's open standard for connecting LLMs to tools and data sources. Already
 
 ---
 
+## The agentic ecosystem
+
+You don't need all of these. Know LangChain/LangGraph deeply - that's where 39.9% of job postings point. Know the others well enough to pick the right tool for a given situation.
+
+### LangChain + LangGraph
+The most widely used agentic stack. LangChain provides the building blocks (chains, retrievers, tool wrappers, memory). LangGraph adds stateful agent graphs with branching, looping, checkpointing, and human-in-the-loop.
+
+- [LangChain Docs](https://python.langchain.com/docs/introduction/) - components, integrations, LCEL
+- [LangGraph Docs](https://langchain-ai.github.io/langgraph/) - stateful agents, the main framework for production agents
+- [LangChain blog](https://blog.langchain.dev/) - agentic patterns as they emerge
+
+### LlamaIndex
+Focused on data connectivity - the best choice when the core challenge is getting data into the LLM accurately. Stronger than LangChain for complex document parsing, structured knowledge graphs, and production RAG pipelines.
+
+- [LlamaIndex Docs](https://docs.llamaindex.ai/)
+
+### CrewAI
+High-level multi-agent framework. You define agents with roles, tools, and goals, then define tasks and hand them to a crew. Less code for coordinator-specialist patterns than writing raw LangGraph.
+
+- [CrewAI Docs](https://docs.crewai.com/)
+
+### AutoGen (Microsoft)
+Multi-agent conversation framework. Agents talk to each other to solve tasks. Good for research and exploration of complex multi-agent interactions. Strong community and Microsoft backing.
+
+- [AutoGen Docs](https://microsoft.github.io/autogen/)
+
+### Pydantic AI
+Agent framework built on top of Pydantic. Strongly typed, test-friendly, straightforward for single-agent apps where type safety matters. Newer but growing quickly.
+
+- [Pydantic AI Docs](https://ai.pydantic.dev/)
+
+### Haystack
+Production-focused RAG and agent framework by deepset. Strong on pipelines, evaluation, and enterprise features. Good alternative to LlamaIndex when you need built-in evaluation tooling.
+
+- [Haystack Docs](https://docs.haystack.deepset.ai/)
+
+### Semantic Kernel (Microsoft)
+Enterprise-focused SDK for .NET, Python, and Java. If you're working in enterprise environments - especially Microsoft stack - this shows up. Plugin architecture aligns well with MCP concepts.
+
+- [Semantic Kernel Docs](https://learn.microsoft.com/en-us/semantic-kernel/)
+
+### Agno (formerly Phidata)
+Lightweight agent framework. Good for building agents fast with minimal boilerplate. Memory, storage, and knowledge built in.
+
+- [Agno Docs](https://docs.agno.com/)
+
+### Which one to pick
+
+| Situation | Use |
+|---|---|
+| Job market signal, general agents | LangGraph |
+| Complex document pipelines and RAG | LlamaIndex |
+| Multi-agent without writing graph code | CrewAI |
+| Strongly typed, testable, single agent | Pydantic AI |
+| Microsoft/enterprise environment | Semantic Kernel or AutoGen |
+
+---
+
 ## Phase project
 
 **Research agent with RAG and MCP**
