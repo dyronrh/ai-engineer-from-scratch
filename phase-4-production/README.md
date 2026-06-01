@@ -1,78 +1,77 @@
 # Phase 4 - Production
 
-**Estimated duration:** 4-6 weeks  
+**Duration:** 4-6 weeks  
 **Prerequisite:** Phase 3 done
 
 ---
 
-## Market context for this phase
+## What this phase covers
 
-The skills in this phase are what separate candidates who can demo things from candidates who can ship them. Every company hiring AI engineers wants both — but production skills are the bottleneck.
+The difference between a demo and a product. FastAPI + Docker appear in 1,700+ active AI engineer postings. 63% of companies report a shortage of engineers who can do this well.
 
-- Docker and Kubernetes appear in 15-17% of all AI Engineer job postings
-- FastAPI has 1,700+ active job listings that combine it with AI
-- 63% of companies report a shortage of engineers with MLOps experience
-- End-to-end production experience puts you in the top 10% of candidates
+If you can build agents and RAG pipelines but can't ship them as a service, you're a prototype engineer. This phase fixes that.
 
 ---
 
 ## Modules
 
-### [01 - MLOps](./01-mlops/)
+### [01 - FastAPI](./01-fastapi/)
 
-The infrastructure that makes AI projects maintainable. Without it, you can't reproduce results, you don't know what's in production, and deploying a new version is a manual nightmare.
-
-**Topics:**
-- Experiment tracking with MLflow: log params, metrics, and model artifacts
-- Data versioning with DVC: track datasets like code
-- CI/CD for ML with GitHub Actions: automate testing and deployment
-- Model registry: version, stage, and serve models
-
-**Resources:**
-| Resource | Time |
-|---|---|
-| [MLflow Docs](https://mlflow.org/docs/latest/index.html) | 1 week |
-| [DVC Docs](https://dvc.org/doc) | 3 days |
-| [GitHub Actions Docs](https://docs.github.com/en/actions) | 1 week |
-
----
-
-### [02 - Deployment](./02-deployment/) — high priority
-
-FastAPI, Docker, and a cloud provider. This stack shows up in nearly every mid-size company and startup AI engineer posting. Without it you can build things, but you can't ship them.
+The standard for Python AI APIs. Async by default, automatic docs, Pydantic models, easy to test.
 
 **Topics:**
-- FastAPI: build production-grade AI APIs with async support
-- Docker: containerize your app so it runs the same everywhere
-- Docker Compose: local multi-service setups (API + vector DB + monitoring)
-- Kubernetes basics: orchestration for production
-- Cloud: AWS (ECS/SageMaker) or GCP (Cloud Run/Vertex AI)
+- Async endpoints that call LLMs without blocking
+- Pydantic request/response schemas
+- Dependency injection for API keys and clients
+- Streaming responses (for LLM output)
+- Background tasks for long-running agent jobs
+- Health checks and basic auth
 
 **Resources:**
 | Resource | Time |
 |---|---|
 | [FastAPI Docs](https://fastapi.tiangolo.com/) | 1 week |
-| [Play with Docker](https://labs.play-with-docker.com/) | 2 weeks |
-| [AWS Free Tier](https://aws.amazon.com/free/) | 2 weeks |
+| [FastAPI best practices](https://github.com/zhanymkanov/fastapi-best-practices) | 2 days |
 
 ---
 
-### [03 - Observability](./03-observability/)
+### [02 - Docker and Deployment](./02-docker-and-deployment/)
 
-LLM apps need different monitoring than traditional software. You can't just check if the server is up — you need to know if the answers are any good.
+Containerize your app. Ship it to the cloud. Docker and Kubernetes are in 15-17% of all AI Engineer postings.
 
 **Topics:**
-- LLM monitoring with Langfuse: traces, costs, latency, quality
-- Guardrails: input/output validation, prompt injection detection
-- Evaluation pipelines: automated evals on every deployment
-- OWASP LLM Top 10: the security risks specific to LLM applications
+- Dockerfile for a FastAPI + LLM app
+- Docker Compose for local multi-service setups (API + vector DB + monitoring)
+- Environment variables and secrets management
+- Deploying to AWS (ECS/App Runner) or GCP (Cloud Run)
+- GitHub Actions CI/CD: test on push, deploy on merge
+
+**Resources:**
+| Resource | Time |
+|---|---|
+| [Play with Docker](https://labs.play-with-docker.com/) | 1 week |
+| [AWS Free Tier](https://aws.amazon.com/free/) | 1 week |
+| [GitHub Actions Docs](https://docs.github.com/en/actions) | 3 days |
+
+---
+
+### [03 - Monitoring](./03-monitoring/)
+
+LLM apps break in ways traditional apps don't. A 200 response doesn't mean the answer was good. You need to trace prompts, measure quality, and catch regressions.
+
+**Topics:**
+- Langfuse: trace every LLM call — prompt, response, latency, cost
+- Structured logging for agent steps
+- Evaluation pipelines: run evals on every deployment
+- Guardrails: input validation, output validation, PII detection
+- OWASP LLM Top 10: prompt injection and the other real security risks
 
 **Resources:**
 | Resource | Time |
 |---|---|
 | [Langfuse Docs](https://langfuse.com/docs) | 3 days |
-| [RAGAS](https://docs.ragas.io/) and [DeepEval](https://docs.confident-ai.com/) | 1 week |
-| [OWASP LLM Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/) | 3 days |
+| [RAGAS](https://docs.ragas.io/) + [DeepEval](https://docs.confident-ai.com/) | 1 week |
+| [OWASP LLM Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/) | 2 days |
 
 ---
 
@@ -80,23 +79,19 @@ LLM apps need different monitoring than traditional software. You can't just che
 
 **Production LLM API with monitoring**
 
-FastAPI + Docker + Langfuse. A real service with traces, health checks, and a CI/CD pipeline. This is what companies mean when they ask for "production experience."
+FastAPI service wrapping an agent pipeline, containerized with Docker, deployed to cloud, with Langfuse tracing and a GitHub Actions pipeline.
 
-**Stack:** FastAPI, Docker, Langfuse, GitHub Actions  
-**Demonstrates:** API design, containerization, observability, automated deployment
-
-Project folder: [`02-deployment/project/`](./02-deployment/project/)
+Project folder: [`02-docker-and-deployment/project/`](./02-docker-and-deployment/project/)
 
 ---
 
 ## Phase checklist
 
-- [ ] Logged a full experiment with MLflow (params, metrics, artifact)
-- [ ] Versioned a dataset with DVC
-- [ ] Built and containerized a FastAPI service with Docker
-- [ ] GitHub Actions runs tests and deploys on push
-- [ ] Deployed something to the cloud that someone else can hit
-- [ ] Set up Langfuse traces for an LLM app
-- [ ] Implemented at least one guardrail
+- [ ] FastAPI service with async LLM endpoint and streaming
+- [ ] Containerized with Docker, runs on a fresh machine with `docker compose up`
+- [ ] Deployed to cloud — someone outside your network can hit it
+- [ ] GitHub Actions runs tests on push
+- [ ] Every LLM call is traced in Langfuse
+- [ ] Input guardrail blocks obvious prompt injection
 
 Next: [Final Project](../final-project/)
