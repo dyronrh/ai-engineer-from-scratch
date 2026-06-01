@@ -1,6 +1,6 @@
 # 03 · LLM Engineering
 
-Building real applications on LLMs. Not just "call the API" — designing systems that work.
+Building real applications on LLMs. Not just "call the API" - designing systems that work.
 
 ## Topics
 
@@ -21,7 +21,7 @@ Not magic. Engineering: experiment, measure, iterate.
 | RAG (preview of Phase 3) | When the model doesn't have the knowledge |
 
 ### LangChain
-Chains, memory, document loaders. Useful tool — but understand what it does under the hood.
+Chains, memory, document loaders. Useful tool - but understand what it does under the hood.
 
 ## Exercises
 
@@ -48,4 +48,4 @@ ANTHROPIC_API_KEY=sk-ant-...
 
 ## Phase project
 
-See [`project/`](./project/) — chatbot with memory and context.
+See [`project/`](./project/) - chatbot with memory and context.

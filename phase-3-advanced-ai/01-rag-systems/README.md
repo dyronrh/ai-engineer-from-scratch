@@ -4,8 +4,8 @@ Making LLMs work with data they weren't trained on.
 
 ## Why RAG before fine-tuning
 
-Fine-tuning bakes knowledge into model weights — expensive, slow to update, hard to audit.  
-RAG retrieves knowledge at inference time — cheap, always fresh, traceable to sources.
+Fine-tuning bakes knowledge into model weights - expensive, slow to update, hard to audit.  
+RAG retrieves knowledge at inference time - cheap, always fresh, traceable to sources.
 
 Use RAG first. Fine-tune only when prompt engineering and RAG aren't enough.
 
@@ -47,5 +47,5 @@ pip install chromadb langchain openai ragas llama-index
 
 - [Pinecone Learning Center](https://www.pinecone.io/learn/)
 - [LlamaIndex Docs](https://docs.llamaindex.ai/)
-- [RAGAS — RAG evaluation](https://docs.ragas.io/)
+- [RAGAS - RAG evaluation](https://docs.ragas.io/)
 - [OpenAI Embeddings Guide](https://platform.openai.com/docs/guides/embeddings)

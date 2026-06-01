@@ -2,7 +2,7 @@
 
 The capstone. Everything from the four phases in one system.
 
-This is not a tutorial project — it's a real, deployable application that demonstrates you can build end-to-end AI systems.
+This is not a tutorial project - it's a real, deployable application that demonstrates you can build end-to-end AI systems.
 
 ---
 
@@ -10,11 +10,11 @@ This is not a tutorial project — it's a real, deployable application that demo
 
 A research assistant that takes a topic or question from the user and produces a comprehensive, well-cited report by:
 
-1. **Planning** — breaking the topic into sub-questions
-2. **Retrieving** — searching a document collection with RAG
-3. **Analyzing** — specialist agents process different angles
-4. **Synthesizing** — a coordinator agent assembles the final report
-5. **Citing** — every claim is traced to its source document
+1. **Planning** - breaking the topic into sub-questions
+2. **Retrieving** - searching a document collection with RAG
+3. **Analyzing** - specialist agents process different angles
+4. **Synthesizing** - a coordinator agent assembles the final report
+5. **Citing** - every claim is traced to its source document
 
 ---
 
@@ -193,11 +193,11 @@ This project is complete when:
 
 Once the base works, possible additions:
 
-- **Web interface** — React or Streamlit frontend
-- **Streaming** — stream the report as it's generated
-- **Document upload** — API endpoint to add new documents
-- **Auth** — API key authentication
-- **Caching** — cache common queries to cut costs
-- **Multi-modal** — support PDFs with images, charts
+- **Web interface** - React or Streamlit frontend
+- **Streaming** - stream the report as it's generated
+- **Document upload** - API endpoint to add new documents
+- **Auth** - API key authentication
+- **Caching** - cache common queries to cut costs
+- **Multi-modal** - support PDFs with images, charts
 
 Pick one. Ship it. Add it to your portfolio.

@@ -20,7 +20,7 @@ pip install torch torchvision matplotlib
 
 ## Resources
 
-- [fast.ai — Practical Deep Learning](https://course.fast.ai/)
-- [CS231n — Convolutional Neural Networks](https://cs231n.github.io/)
+- [fast.ai - Practical Deep Learning](https://course.fast.ai/)
+- [CS231n - Convolutional Neural Networks](https://cs231n.github.io/)
 - [PyTorch tutorials](https://pytorch.org/tutorials/)
-- [Andrej Karpathy — Neural Networks: Zero to Hero](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ)
+- [Andrej Karpathy - Neural Networks: Zero to Hero](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ)

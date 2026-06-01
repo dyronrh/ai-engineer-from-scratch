@@ -1,6 +1,6 @@
 # 02 · Math & Statistics
 
-Not to become a mathematician — to stop debugging models blindly.
+Not to become a mathematician - to stop debugging models blindly.
 
 ## What matters for AI
 
@@ -30,6 +30,6 @@ Key concepts: conditional probability, Bayes theorem, distributions (normal, bin
 
 ## Resources
 
-- [3Blue1Brown — Essence of Linear Algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) — visual, essential
-- [3Blue1Brown — Calculus](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr)
-- [StatQuest](https://www.youtube.com/@statquest) — stats explained without pain
+- [3Blue1Brown - Essence of Linear Algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) - visual, essential
+- [3Blue1Brown - Calculus](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr)
+- [StatQuest](https://www.youtube.com/@statquest) - stats explained without pain

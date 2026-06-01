@@ -21,7 +21,7 @@
 
 ### [01 · Deep Learning](./01-deep-learning/)
 
-Neural networks: not just using frameworks — understanding what's happening inside.
+Neural networks: not just using frameworks - understanding what's happening inside.
 
 **Topics:**
 - Perceptron and feedforward networks
@@ -34,8 +34,8 @@ Neural networks: not just using frameworks — understanding what's happening in
 **Resources:**
 | Resource | Time |
 |---|---|
-| [fast.ai — Practical Deep Learning](https://course.fast.ai/) | 4 weeks |
-| [CS231n Stanford — CNNs](https://cs231n.github.io/) | 2 weeks |
+| [fast.ai - Practical Deep Learning](https://course.fast.ai/) | 4 weeks |
+| [CS231n Stanford - CNNs](https://cs231n.github.io/) | 2 weeks |
 | [PyTorch official tutorials](https://pytorch.org/tutorials/) | 1 week |
 
 ---
@@ -57,7 +57,7 @@ The architecture that changed everything. Understanding attention means understa
 |---|---|
 | [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) | 2 days |
 | [HuggingFace NLP Course](https://huggingface.co/learn/nlp-course/chapter1/1) | 2 weeks |
-| [Andrej Karpathy — makemore](https://github.com/karpathy/makemore) | 1 week |
+| [Andrej Karpathy - makemore](https://github.com/karpathy/makemore) | 1 week |
 
 ---
 

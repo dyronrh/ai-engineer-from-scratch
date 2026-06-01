@@ -50,6 +50,6 @@ streamlit run app.py
 
 ## Resources
 
-- [Andrew Ng — ML Specialization](https://www.coursera.org/specializations/machine-learning-introduction)
+- [Andrew Ng - ML Specialization](https://www.coursera.org/specializations/machine-learning-introduction)
 - [Scikit-learn User Guide](https://scikit-learn.org/stable/user_guide.html)
-- [Kaggle Learn — Intermediate ML](https://www.kaggle.com/learn/intermediate-machine-learning)
+- [Kaggle Learn - Intermediate ML](https://www.kaggle.com/learn/intermediate-machine-learning)

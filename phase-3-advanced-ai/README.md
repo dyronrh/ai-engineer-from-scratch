@@ -3,7 +3,7 @@
 > This is where real engineering begins.
 
 **Estimated duration:** 6–10 weeks  
-**Prerequisite:** Phase 2 complete — especially LLM Engineering
+**Prerequisite:** Phase 2 complete - especially LLM Engineering
 
 ---
 
@@ -48,7 +48,7 @@ Agents that plan, use tools, and adapt. Not chatbots with if/else.
 - Tools: web search, code execution, external APIs
 - Memory: short-term (context window), long-term (vector store)
 - Multi-agent: coordination, communication, specialization
-- MCP — Model Context Protocol: Anthropic's standard for connecting tools
+- MCP - Model Context Protocol: Anthropic's standard for connecting tools
 
 **Resources:**
 | Resource | Time |
@@ -65,7 +65,7 @@ Agents that plan, use tools, and adapt. Not chatbots with if/else.
 When fine-tuning makes sense (less often than you think) and how to do it right.
 
 **Topics:**
-- Fine-tuning vs. prompt engineering vs. RAG — when to use each
+- Fine-tuning vs. prompt engineering vs. RAG - when to use each
 - LoRA and QLoRA: efficient fine-tuning on modest hardware
 - Dataset curation: quality over quantity
 - Evaluating fine-tuned models

@@ -1,6 +1,6 @@
 # 01 · Python for AI
 
-Production Python — not tutorial Python.
+Production Python - not tutorial Python.
 
 ## Exercises
 
@@ -21,7 +21,7 @@ pip install numpy pandas matplotlib seaborn httpx
 
 ## Resources
 
-- [Real Python — Async IO](https://realpython.com/async-io-python/)
+- [Real Python - Async IO](https://realpython.com/async-io-python/)
 - [Python typing docs](https://docs.python.org/3/library/typing.html)
 - [NumPy user guide](https://numpy.org/doc/stable/user/)
 - [Pandas getting started](https://pandas.pydata.org/docs/getting_started/)

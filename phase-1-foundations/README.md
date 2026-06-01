@@ -10,7 +10,7 @@
 ## What you'll be able to do after this phase
 
 - Write async, typed, object-oriented Python for real AI projects
-- Understand the math behind ML algorithms (not memorize — understand)
+- Understand the math behind ML algorithms (not memorize - understand)
 - Train, evaluate and select classical machine learning models
 - Complete the phase project: a deployed sentiment classifier
 
@@ -33,9 +33,9 @@ The Python used in real AI projects is not beginner Python. You need async/await
 **Resources:**
 | Resource | Time |
 |---|---|
-| [Real Python — Async IO](https://realpython.com/async-io-python/) | 1 week |
-| [Python Docs — typing](https://docs.python.org/3/library/typing.html) | 3 days |
-| [Kaggle Learn — Python + Pandas](https://www.kaggle.com/learn) | 1 week |
+| [Real Python - Async IO](https://realpython.com/async-io-python/) | 1 week |
+| [Python Docs - typing](https://docs.python.org/3/library/typing.html) | 3 days |
+| [Kaggle Learn - Python + Pandas](https://www.kaggle.com/learn) | 1 week |
 
 ---
 
@@ -52,15 +52,15 @@ You don't need to be a mathematician, but you do need to understand what the cod
 **Resources:**
 | Resource | Time |
 |---|---|
-| [3Blue1Brown — Essence of Linear Algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) | 1 week |
-| [3Blue1Brown — Calculus](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr) | 1 week |
-| [StatQuest — Probability & Statistics](https://www.youtube.com/@statquest) | 2 weeks |
+| [3Blue1Brown - Essence of Linear Algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) | 1 week |
+| [3Blue1Brown - Calculus](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr) | 1 week |
+| [StatQuest - Probability & Statistics](https://www.youtube.com/@statquest) | 2 weeks |
 
 ---
 
 ### [03 · ML Fundamentals](./03-ml-fundamentals/)
 
-Classical machine learning: regression, classification, clustering. Scikit-learn is your main tool here. Beyond training models, you'll learn to evaluate them properly — which is more than half the real work.
+Classical machine learning: regression, classification, clustering. Scikit-learn is your main tool here. Beyond training models, you'll learn to evaluate them properly - which is more than half the real work.
 
 **Topics:**
 - Linear and logistic regression
@@ -73,9 +73,9 @@ Classical machine learning: regression, classification, clustering. Scikit-learn
 **Resources:**
 | Resource | Time |
 |---|---|
-| [Andrew Ng — ML Specialization](https://www.coursera.org/specializations/machine-learning-introduction) | 4 weeks |
-| [Scikit-learn — Official tutorial](https://scikit-learn.org/stable/tutorial/index.html) | 1 week |
-| [Kaggle — Feature Engineering](https://www.kaggle.com/learn/feature-engineering) | 3 days |
+| [Andrew Ng - ML Specialization](https://www.coursera.org/specializations/machine-learning-introduction) | 4 weeks |
+| [Scikit-learn - Official tutorial](https://scikit-learn.org/stable/tutorial/index.html) | 1 week |
+| [Kaggle - Feature Engineering](https://www.kaggle.com/learn/feature-engineering) | 3 days |
 
 ---
 

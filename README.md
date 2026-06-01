@@ -1,6 +1,6 @@
 # ai-engineer-from-scratch
 
-A real, no-nonsense path to becoming an AI Engineer — from zero to production.
+A real, no-nonsense path to becoming an AI Engineer - from zero to production.
 
 This is the guide I wish I had when I started. Each phase has free resources, exercises, and a concrete project. No shortcuts, but a clear order.
 
@@ -52,10 +52,10 @@ Open it with the [Excalidraw VS Code extension](https://marketplace.visualstudio
 
 | Profile | Where to start |
 |---|---|
-| Complete beginner | Phase 1 from the top — don't skip the math |
+| Complete beginner | Phase 1 from the top - don't skip the math |
 | Developer switching to AI | Phase 2, fill Phase 1 gaps as needed |
-| Data Scientist leveling up | Phase 3 — Agents + LLMOps |
-| Already building with LLMs | Phase 4 — systems that don't break at 3am |
+| Data Scientist leveling up | Phase 3 - Agents + LLMOps |
+| Already building with LLMs | Phase 4 - systems that don't break at 3am |
 
 ---
 
@@ -105,21 +105,21 @@ Folder: [`phase-1-foundations/`](./phase-1-foundations/)
 ### Python for AI
 | Topic | Free resource | Time |
 |---|---|---|
-| Async/await for APIs | [Real Python — Async IO](https://realpython.com/async-io-python/) | 1 week |
+| Async/await for APIs | [Real Python - Async IO](https://realpython.com/async-io-python/) | 1 week |
 | OOP & type hints | [Python Docs](https://docs.python.org/3/library/typing.html) | 3 days |
 | NumPy, Pandas, Matplotlib | [Kaggle Learn](https://www.kaggle.com/learn) | 1 week |
 
 ### Math & Statistics
 | Topic | Free resource | Time |
 |---|---|---|
-| Linear Algebra | [3Blue1Brown — Essence of LA](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) | 1 week |
-| Calculus (backprop) | [3Blue1Brown — Calculus](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr) | 1 week |
+| Linear Algebra | [3Blue1Brown - Essence of LA](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) | 1 week |
+| Calculus (backprop) | [3Blue1Brown - Calculus](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr) | 1 week |
 | Probability & Stats | [StatQuest YouTube](https://www.youtube.com/@statquest) | 2 weeks |
 
 ### ML Fundamentals
 | Topic | Free resource | Time |
 |---|---|---|
-| Core ML concepts | [Andrew Ng — ML Specialization](https://www.coursera.org/specializations/machine-learning-introduction) | 4 weeks |
+| Core ML concepts | [Andrew Ng - ML Specialization](https://www.coursera.org/specializations/machine-learning-introduction) | 4 weeks |
 | Scikit-learn hands-on | [Scikit-learn docs](https://scikit-learn.org/stable/tutorial/index.html) | 1 week |
 | Feature engineering | [Kaggle Feature Engineering](https://www.kaggle.com/learn/feature-engineering) | 3 days |
 
@@ -143,7 +143,7 @@ Folder: [`phase-2-ai-core/`](./phase-2-ai-core/)
 |---|---|---|
 | Attention mechanism | [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) | 2 days |
 | HuggingFace Transformers | [HuggingFace Course](https://huggingface.co/learn/nlp-course/chapter1/1) | 2 weeks |
-| Building LLMs from scratch | [Andrej Karpathy — makemore](https://github.com/karpathy/makemore) | 1 week |
+| Building LLMs from scratch | [Andrej Karpathy - makemore](https://github.com/karpathy/makemore) | 1 week |
 
 ### LLM Engineering
 | Topic | Free resource | Time |
@@ -173,7 +173,7 @@ Folder: [`phase-3-advanced-ai/`](./phase-3-advanced-ai/)
 |---|---|---|
 | LangGraph (stateful agents) | [LangGraph Docs](https://langchain-ai.github.io/langgraph/) | 2 weeks |
 | Multi-agent systems (CrewAI) | [CrewAI Docs](https://docs.crewai.com/) | 1 week |
-| MCP — Model Context Protocol | [Anthropic MCP Docs](https://modelcontextprotocol.io/) | 1 week |
+| MCP - Model Context Protocol | [Anthropic MCP Docs](https://modelcontextprotocol.io/) | 1 week |
 | AutoGen | [AutoGen GitHub](https://github.com/microsoft/autogen) | 1 week |
 
 ### Fine-tuning
@@ -236,7 +236,7 @@ Demonstrates: Agents · RAG · LLMs · FastAPI · Docker · Observability
 | [fast.ai](https://fast.ai) | Best practical deep learning course, completely free |
 | [DeepLearning.AI](https://www.deeplearning.ai/courses/) | Short courses on LLMs, RAG and Agents by Andrew Ng |
 | [HuggingFace Learn](https://huggingface.co/learn) | Hands-on NLP, diffusion and agents with real code |
-| [Andrej Karpathy YouTube](https://www.youtube.com/@AndrejKarpathy) | Build LLMs from scratch — unmissable |
+| [Andrej Karpathy YouTube](https://www.youtube.com/@AndrejKarpathy) | Build LLMs from scratch - unmissable |
 | [The Batch](https://www.deeplearning.ai/the-batch/) | Weekly AI newsletter by DeepLearning.AI |
 
 ---
@@ -251,4 +251,4 @@ Found a better resource, a missing topic or a broken link?
 
 ---
 
-MIT License — free to use, share and adapt.
+MIT License - free to use, share and adapt.

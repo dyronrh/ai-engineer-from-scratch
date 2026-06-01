@@ -4,7 +4,7 @@ The architecture that changed everything. Understanding attention means understa
 
 ## Learning path
 
-1. Start with [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) — visual, no code
+1. Start with [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/) - visual, no code
 2. Implement self-attention from scratch (notebook included)
 3. Use HuggingFace for text classification
 4. Fine-tune a small model on a custom dataset
@@ -29,5 +29,5 @@ pip install transformers datasets tokenizers torch
 
 - [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
 - [HuggingFace Course](https://huggingface.co/learn/nlp-course/chapter1/1)
-- [Andrej Karpathy — Let's build GPT](https://www.youtube.com/watch?v=kCc8FmEb1nY)
+- [Andrej Karpathy - Let's build GPT](https://www.youtube.com/watch?v=kCc8FmEb1nY)
 - [Attention is All You Need (original paper)](https://arxiv.org/abs/1706.03762)

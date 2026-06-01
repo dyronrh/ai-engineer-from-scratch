@@ -7,10 +7,10 @@ Agents that plan, use tools, and adapt. Not chatbots wrapped in a loop.
 A chatbot responds. An agent acts.
 
 An agent has:
-- **Goals** — what it's trying to achieve
-- **Tools** — actions it can take (search web, run code, call APIs)
-- **Memory** — context it carries across steps
-- **Planning** — ability to break a goal into steps
+- **Goals** - what it's trying to achieve
+- **Tools** - actions it can take (search web, run code, call APIs)
+- **Memory** - context it carries across steps
+- **Planning** - ability to break a goal into steps
 
 ## ReAct pattern
 
@@ -50,7 +50,7 @@ pip install langchain langgraph crewai openai anthropic tavily-python
 
 ## Phase project
 
-See [`project/`](./project/) — research agent with RAG.
+See [`project/`](./project/) - research agent with RAG.
 
 ## Resources
 

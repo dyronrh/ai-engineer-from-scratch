@@ -58,6 +58,6 @@ pip install transformers peft datasets accelerate bitsandbytes trl
 ## Resources
 
 - [HuggingFace PEFT](https://huggingface.co/docs/peft/index)
-- [Argilla — Dataset curation](https://docs.argilla.io/)
+- [Argilla - Dataset curation](https://docs.argilla.io/)
 - [Eleuther LM Evaluation Harness](https://github.com/EleutherAI/lm-evaluation-harness)
-- [Unsloth — Fast fine-tuning](https://github.com/unslothai/unsloth)
+- [Unsloth - Fast fine-tuning](https://github.com/unslothai/unsloth)

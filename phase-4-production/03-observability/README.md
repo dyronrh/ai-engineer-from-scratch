@@ -15,7 +15,7 @@ You can't fix what you can't see. LLM apps need different monitoring than tradit
 
 ## Langfuse
 
-Tracing for LLM applications. Every prompt, every response, every tool call — logged and queryable.
+Tracing for LLM applications. Every prompt, every response, every tool call - logged and queryable.
 
 ```python
 from langfuse import Langfuse
@@ -64,6 +64,6 @@ Run evals automatically on every deployment:
 ## Resources
 
 - [Langfuse Docs](https://langfuse.com/docs)
-- [RAGAS — RAG evaluation](https://docs.ragas.io/)
+- [RAGAS - RAG evaluation](https://docs.ragas.io/)
 - [DeepEval](https://docs.confident-ai.com/)
 - [OWASP LLM Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
