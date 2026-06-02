@@ -1,8 +1,14 @@
-# ai-engineer-from-scratch
+# AI Engineer from Scratch
 
-A practical roadmap to becoming an AI Engineer in the agentic era, built from what companies are actually hiring for right now.
+The fastest path from developer to AI Engineer in 2026, built from real hiring data. Not theory, not hype.
 
-This is not another "learn ML from scratch" repo. The job market shifted a few years ago and hasn't looked back. Companies stopped hiring people to train models and started hiring people who can build systems on top of them. Agents, RAG, MCP, production APIs. That is the actual job.
+Data sourced from active job postings across [LinkedIn](https://www.linkedin.com/jobs), [Indeed](https://www.indeed.com), [Glassdoor](https://www.glassdoor.com), [Wellfound](https://wellfound.com) and [Levels.fyi](https://www.levels.fyi/jobs) updated through 2025-2026.
+
+> If this roadmap helps you, drop a ⭐ so others can find it.
+
+This is not another "learn ML from scratch" guide. The market already moved. Companies are not hiring people to train models. They are hiring people who can build production systems on top of them: agents that reason and act, RAG pipelines that surface real knowledge, APIs that ship and scale. That is the actual job, and this roadmap is built around it.
+
+It is free and community-driven. If you spot something outdated, find a better resource, or want to add a project, open a PR. Every contribution makes it more useful for everyone coming after you.
 
 **Time:** 6-9 months at 10-15 hours per week  
 **Cost:** 100% free resources  
@@ -10,14 +16,14 @@ This is not another "learn ML from scratch" repo. The job market shifted a few y
 
 ---
 
-## What the market wants (2024-2025 job data)
+## What the market wants (2024-2026 job data)
 
 | Skill | Signal |
 |---|---|
 | Python | 82% of all AI Engineer postings |
 | LangChain / LangGraph | 39.9% of agentic AI roles |
 | RAG systems | Dominant production use case across all company sizes |
-| AI Agents | 980% job posting growth from 2023 to 2024 |
+| AI Agents | 980% job posting growth from 2024 to 2026 |
 | FastAPI + Docker | 1,700+ active postings combining AI with these tools |
 | MCP (Model Context Protocol) | Emerging standard already in job descriptions |
 
@@ -32,35 +38,7 @@ This roadmap targets AI Engineer and LLM Engineer roles, where demand is growing
 
 ## The full map
 
-Interactive diagram: [`roadmap.excalidraw`](./roadmap.excalidraw)  
-Open with the [Excalidraw VS Code extension](https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor) or at [excalidraw.com](https://excalidraw.com).
-
-```
-Start
-   |
-   v
-Phase 1 - Python for AI (2-4 weeks)
-  The language everything runs on
-
-   |
-   v
-Phase 2 - LLM Engineering (4-6 weeks)
-  APIs, prompt engineering, tool use
-
-   |
-   v
-Phase 3 - Agentic AI (6-8 weeks)  <-- where most of the hiring is
-  RAG · Agents · Agentic Patterns · MCP
-
-   |
-   v
-Phase 4 - Production (4-6 weeks)
-  FastAPI · Docker · Monitoring
-
-   |
-   v
-  AI Engineer
-```
+![AI Engineer Roadmap 2026](./assets/img/ai-engineer-roadmap-2026.png)
 
 ---
 
@@ -94,6 +72,12 @@ Letting the model invoke your functions. The model decides when to call them and
 
 **MCP (Model Context Protocol)**  
 An open standard for connecting LLMs to tools and data sources. Instead of writing custom integration code for every tool, MCP defines a universal protocol. One server, any client.
+
+**A2A (Agent-to-Agent Protocol)**  
+Google's open protocol for agent interoperability. Where MCP connects agents to tools and data, A2A lets agents talk to other agents regardless of the framework they were built with. An agent built with LangGraph can delegate work to one built with CrewAI or Google ADK. It standardizes how agents discover each other, exchange tasks, and stream results back.
+
+**Skills (Anthropic)**  
+Anthropic's pattern for structuring reusable agent capabilities. Instead of giving an agent one big list of tools, you group related tools into a named skill with its own context and instructions. The agent loads the skills it needs for a given task. It keeps agents focused and makes complex behavior composable without making the system prompt unmanageable.
 
 **Fine-tuning**  
 Training a pre-trained model further on your own data to change its behavior. It is expensive, slow to update, and rarely the right first choice. Prompt engineering and RAG solve most problems without it.
@@ -246,6 +230,8 @@ Folder: [`phase-3-agentic-ai/`](./phase-3-agentic-ai/)
 | LangGraph - stateful agents | [LangGraph Tutorials](https://langchain-ai.github.io/langgraph/tutorials/) | 2 weeks |
 | Multi-agent systems with CrewAI | [CrewAI Docs](https://docs.crewai.com/) | 1 week |
 | MCP - Model Context Protocol | [MCP Docs](https://modelcontextprotocol.io/) | 1 week |
+| A2A - Agent-to-Agent Protocol | [Google A2A Docs](https://google.github.io/A2A/) | 3 days |
+| Skills pattern - Anthropic | [Anthropic Agent Docs](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/agent-skills) | 3 days |
 
 ---
 
@@ -279,6 +265,7 @@ A **multi-agent research assistant** with RAG, deployed as a FastAPI service wit
 
 | Resource | Why |
 |---|---|
+| [ai.Engineer on YouTube](https://www.youtube.com/@aiDotEngineer) | Walkthroughs and project breakdowns for everything in this roadmap |
 | [fast.ai](https://fast.ai) | Best practical deep learning course if you want ML depth |
 | [DeepLearning.AI short courses](https://www.deeplearning.ai/courses/) | RAG, agents, LLMs by Andrew Ng, all free |
 | [HuggingFace Learn](https://huggingface.co/learn) | Transformers, pipelines, hands-on |
@@ -290,11 +277,13 @@ A **multi-agent research assistant** with RAG, deployed as a FastAPI service wit
 
 ## Contributing
 
-Found a better resource or a missing topic? Open a PR.
+Found a better resource, a broken link, or a missing topic? Contributions are welcome.
 
-1. Fork the repo
-2. `git checkout -b add/your-topic`
-3. Open a Pull Request
+1. Clone the repo and create a branch: `git checkout -b add/your-topic`
+2. Make your changes
+3. Open a Pull Request with a short description of what you added and why
+
+
 
 ---
 

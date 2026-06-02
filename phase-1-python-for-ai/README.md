@@ -102,15 +102,17 @@ Resource: [Kaggle Learn - Pandas](https://www.kaggle.com/learn/pandas)
 
 ## Exercises
 
-| File | What you build |
-|---|---|
-| `01_async_calls.py` | Call 5 APIs concurrently with `asyncio.gather` |
-| `02_typed_models.py` | Typed dataclasses for a document and search result |
-| `03_env_config.py` | Load API keys and config from `.env` |
-| `04_http_client.py` | Fetch data from a public API and parse the response |
-| `05_pandas_basics.py` | Load a CSV, filter, groupby, export |
+All exercises are Jupyter notebooks. Open them in Google Colab or run them locally with Jupyter.
 
-## Setup
+| Notebook | What you build |
+|---|---|
+| [01_async_calls.ipynb](./exercises/01_async_calls.ipynb) | Call 5 APIs concurrently with `asyncio.gather` |
+| [02_typed_models.ipynb](./exercises/02_typed_models.ipynb) | Typed dataclasses and Pydantic models for documents and search results |
+| [03_env_config.ipynb](./exercises/03_env_config.ipynb) | Load API keys from `.env` locally and from Colab secrets in the cloud |
+| [04_http_client.ipynb](./exercises/04_http_client.ipynb) | Fetch data from a real public API and handle errors |
+| [05_pandas_basics.ipynb](./exercises/05_pandas_basics.ipynb) | Load a CSV, filter, groupby, export |
+
+Each notebook installs its own dependencies, so no setup needed in Colab. For local use:
 
 ```bash
 pip install httpx pandas python-dotenv pydantic
