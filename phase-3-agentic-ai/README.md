@@ -119,6 +119,30 @@ Anthropic's open standard for connecting LLMs to tools and data sources. Already
 
 ---
 
+### [06 - Memory Systems](./06-memory-systems/)
+
+What separates a stateless LLM call from a real agent: persistent memory across turns, sessions, and runs. Memory is not one thing — it is several mechanisms, each solving a different problem.
+
+**Topics:**
+- Memory taxonomy: in-context, external short-term, semantic, episodic, procedural
+- In-context memory: message list management, sliding windows
+- External short-term: Redis and Postgres for cross-request state
+- Semantic memory: vector store for persistent facts and preferences
+- Episodic memory: agent run logs for learning from past outcomes
+- LangGraph persistence: built-in checkpointing for resumable agent runs
+- Memory frameworks: Mem0, Zep, LangGraph Memory Store
+- Memory read/write patterns: when to remember, what to forget
+
+**Resources:**
+| Resource | Time |
+|---|---|
+| [LangGraph Memory Docs](https://langchain-ai.github.io/langgraph/concepts/memory/) | 1 week |
+| [Mem0 Docs](https://docs.mem0.ai/) | 3 days |
+| [Zep Docs](https://docs.getzep.com/) | 2 days |
+| [Lilian Weng - LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/) | 3 days |
+
+---
+
 ## The agentic ecosystem
 
 You do not need to know all of these. Know LangChain and LangGraph well, that is where 39.9% of job postings point. Know the others well enough to recognize when one fits better than another.
@@ -204,5 +228,7 @@ Project folder: [`04-multi-agent/project/`](./04-multi-agent/project/)
 - [ ] Agent loops, retries on failure, and stops when the goal is met
 - [ ] Multi-agent system with coordinator delegating to 2+ specialists
 - [ ] Built or connected an MCP server
+- [ ] Agent persists memory between sessions and recalls relevant context automatically
+- [ ] Implemented episodic memory so the agent avoids repeating failed approaches
 
 Next: [Phase 4 - Production](../phase-4-production/)

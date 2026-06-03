@@ -79,6 +79,12 @@ Google's open protocol for agent interoperability. Where MCP connects agents to 
 **Skills (Anthropic)**  
 Anthropic's pattern for structuring reusable agent capabilities. Instead of giving an agent one big list of tools, you group related tools into a named skill with its own context and instructions. The agent loads the skills it needs for a given task. It keeps agents focused and makes complex behavior composable without making the system prompt unmanageable.
 
+**Context engineering**  
+The discipline of managing what goes into the LLM's context window on every call. Context determines quality, cost, and latency. You decide what to include, what to compress, what to cache, and what to leave out. Prompt caching, rolling summaries, and dynamic retrieval are all context engineering tools.
+
+**Memory (agent)**  
+The mechanisms that let an agent remember things beyond a single API call. In-context memory is the message list. Semantic memory is a vector store of persistent facts. Episodic memory is a log of past agent runs. External memory is a database that survives between sessions. Production agents combine several of these.
+
 **Fine-tuning**  
 Training a pre-trained model further on your own data to change its behavior. It is expensive, slow to update, and rarely the right first choice. Prompt engineering and RAG solve most problems without it.
 
@@ -117,6 +123,15 @@ Running a model to generate output, as opposed to training it. When you call the
 | **Pydantic** | Python library for data validation and typed models; used for structured LLM output |
 | **Structured output** | Getting the model to return valid JSON matching a schema you define |
 | **Prompt caching** | Reusing computed context across calls to save cost and latency (Anthropic feature) |
+| **Context engineering** | The discipline of deciding what goes into the context window on every call: what to include, compress, cache, or exclude to maximize quality and minimize cost |
+| **Token budget** | The planned allocation of tokens across system prompt, history, retrieved docs, and response within a fixed context window |
+| **Context compression** | Techniques for reducing conversation history size without losing critical information — rolling summaries, selective retention, embedding-based filtering |
+| **Semantic memory** | Long-term persistent facts and preferences stored as embeddings in a vector database, retrieved by similarity when relevant |
+| **Episodic memory** | Logs of past agent runs: what was attempted, what worked, what failed — used to avoid repeating mistakes |
+| **In-context memory** | The current conversation message list; the simplest form of agent memory, lost when the session ends |
+| **Working memory** | A compressed summary of recent conversation history, used when the full history does not fit in the context window |
+| **Mem0** | Open-source memory layer that handles storage, retrieval, and updating of agent memories across users and sessions |
+| **Zep** | Memory layer for LLM apps with automatic summarization and entity extraction from conversation history |
 | **Tokenizer** | The component that converts text to tokens and back |
 | **tiktoken** | OpenAI's tokenizer library; lets you count tokens before sending a request |
 | **SSE (Server-Sent Events)** | How streaming LLM responses work over HTTP |
@@ -148,7 +163,8 @@ ai-engineer-from-scratch/
 │   ├── README.md
 │   ├── 01-how-llms-work/
 │   ├── 02-api-and-tool-use/
-│   └── 03-prompt-engineering/
+│   ├── 03-prompt-engineering/
+│   └── 04-context-engineering/
 │
 ├── phase-3-agentic-ai/             <- where the jobs are
 │   ├── README.md
@@ -156,7 +172,8 @@ ai-engineer-from-scratch/
 │   ├── 02-agentic-patterns/
 │   ├── 03-langgraph/
 │   ├── 04-multi-agent/
-│   └── 05-mcp/
+│   ├── 05-mcp/
+│   └── 06-memory-systems/
 │
 ├── phase-4-production/
 │   ├── README.md
@@ -204,6 +221,7 @@ Folder: [`phase-2-llm-engineering/`](./phase-2-llm-engineering/)
 | Anthropic Claude API + tool use | [Anthropic Docs](https://docs.anthropic.com/) | 3 days |
 | Local models with Ollama | [Ollama docs](https://ollama.com/docs) | 2 days |
 | Prompt engineering | [Anthropic Prompt Engineering Guide](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview) | 1 week |
+| Context engineering + prompt caching | [Anthropic Prompt Caching Docs](https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching) | 1 week |
 
 ---
 
@@ -232,6 +250,7 @@ Folder: [`phase-3-agentic-ai/`](./phase-3-agentic-ai/)
 | MCP - Model Context Protocol | [MCP Docs](https://modelcontextprotocol.io/) | 1 week |
 | A2A - Agent-to-Agent Protocol | [Google A2A Docs](https://google.github.io/A2A/) | 3 days |
 | Skills pattern - Anthropic | [Anthropic Agent Docs](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/agent-skills) | 3 days |
+| Memory systems (Mem0, Zep, LangGraph) | [LangGraph Memory Docs](https://langchain-ai.github.io/langgraph/concepts/memory/) | 1 week |
 
 ---
 

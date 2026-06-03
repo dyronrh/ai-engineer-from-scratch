@@ -78,6 +78,26 @@ Not magic. Write a prompt, measure the output, iterate. These techniques have re
 
 ---
 
+### [04 - Context Engineering](./04-context-engineering/)
+
+Managing what goes into the context window on every call. Context determines quality, cost, and latency — all three. Most engineers learn this late and it shows in their production costs.
+
+**Topics:**
+- Token budgeting: counting tokens, planning what fits
+- Prompt caching: Anthropic's cache_control, OpenAI's automatic caching
+- Context compression: rolling summaries, selective retention
+- Dynamic context selection: embedding-based retrieval for message history
+- Conversation management: multi-turn state at scale
+
+**Resources:**
+| Resource | Time |
+|---|---|
+| [Anthropic Prompt Caching Docs](https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching) | 2 days |
+| [OpenAI Prompt Caching](https://platform.openai.com/docs/guides/prompt-caching) | 1 day |
+| [tiktoken](https://github.com/openai/tiktoken) | 1 day |
+
+---
+
 ## Phase project
 
 **Multi-provider LLM router**
@@ -96,5 +116,7 @@ Project folder: [`02-api-and-tool-use/project/`](./02-api-and-tool-use/project/)
 - [ ] Ran a local model with Ollama, no API key needed
 - [ ] Got a reliable JSON response from a model using a Pydantic schema
 - [ ] Wrote a few-shot prompt and measured the improvement over zero-shot
+- [ ] Used prompt caching and measured the latency and cost difference
+- [ ] Implemented conversation history compression when the window fills up
 
 Next: [Phase 3 - Agentic AI](../phase-3-agentic-ai/)
